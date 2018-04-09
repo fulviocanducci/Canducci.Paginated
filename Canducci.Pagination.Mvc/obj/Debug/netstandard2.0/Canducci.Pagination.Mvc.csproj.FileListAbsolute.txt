@@ -1,0 +1,9 @@
+c:\users\developer\documents\visual studio 2017\Projects\Canducci.Pagination\Canducci.Pagination.Mvc\bin\Debug\netstandard2.0\Canducci.Pagination.Mvc.deps.json
+c:\users\developer\documents\visual studio 2017\Projects\Canducci.Pagination\Canducci.Pagination.Mvc\bin\Debug\netstandard2.0\Canducci.Pagination.Mvc.dll
+c:\users\developer\documents\visual studio 2017\Projects\Canducci.Pagination\Canducci.Pagination.Mvc\bin\Debug\netstandard2.0\Canducci.Pagination.Mvc.pdb
+c:\users\developer\documents\visual studio 2017\Projects\Canducci.Pagination\Canducci.Pagination.Mvc\obj\Debug\netstandard2.0\Canducci.Pagination.Mvc.csprojResolveAssemblyReference.cache
+c:\users\developer\documents\visual studio 2017\Projects\Canducci.Pagination\Canducci.Pagination.Mvc\obj\Debug\netstandard2.0\Canducci.Pagination.Mvc.csproj.CoreCompileInputs.cache
+c:\users\developer\documents\visual studio 2017\Projects\Canducci.Pagination\Canducci.Pagination.Mvc\obj\Debug\netstandard2.0\Canducci.Pagination.Mvc.AssemblyInfoInputs.cache
+c:\users\developer\documents\visual studio 2017\Projects\Canducci.Pagination\Canducci.Pagination.Mvc\obj\Debug\netstandard2.0\Canducci.Pagination.Mvc.AssemblyInfo.cs
+c:\users\developer\documents\visual studio 2017\Projects\Canducci.Pagination\Canducci.Pagination.Mvc\obj\Debug\netstandard2.0\Canducci.Pagination.Mvc.dll
+c:\users\developer\documents\visual studio 2017\Projects\Canducci.Pagination\Canducci.Pagination.Mvc\obj\Debug\netstandard2.0\Canducci.Pagination.Mvc.pdb

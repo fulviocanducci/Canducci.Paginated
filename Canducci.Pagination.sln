@@ -12,6 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Canducci.WebApp.Test", "Canducci.WebApp.Test\Canducci.WebApp.Test.csproj", "{C779C622-46C2-4F64-A37F-E61E1DE924FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Canducci.Pagination.Mvc", "Canducci.Pagination.Mvc\Canducci.Pagination.Mvc.csproj", "{43DF26DE-63DC-4394-A949-1A33C0126756}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +30,14 @@ Global
 		{C5B247A7-4D1A-4706-A7D1-2CD814A5250A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5B247A7-4D1A-4706-A7D1-2CD814A5250A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5B247A7-4D1A-4706-A7D1-2CD814A5250A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C779C622-46C2-4F64-A37F-E61E1DE924FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C779C622-46C2-4F64-A37F-E61E1DE924FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C779C622-46C2-4F64-A37F-E61E1DE924FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C779C622-46C2-4F64-A37F-E61E1DE924FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43DF26DE-63DC-4394-A949-1A33C0126756}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43DF26DE-63DC-4394-A949-1A33C0126756}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43DF26DE-63DC-4394-A949-1A33C0126756}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43DF26DE-63DC-4394-A949-1A33C0126756}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
