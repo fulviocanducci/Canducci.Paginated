@@ -3,19 +3,8 @@ using System.Collections.Generic;
 using System.Linq; 
 namespace Canducci.Pagination
 {
-    public class Paginated<T> : List<T>, IPaginated<T>
+    public class Paginated<T> : Bases.PaginatedBase<T>, Interfaces.IPaginated<T>
     {
-        public int PageCount { get; }
-        public int TotalItemCount { get; }
-        public int PageNumber { get; }
-        public int PageSize { get; }
-        public bool HasPreviousPage { get; }
-        public bool HasNextPage { get; }
-        public bool IsFirstPage { get; }
-        public bool IsLastPage { get; }
-        public int FirstItemOnPage { get; }
-        public int LastItemOnPage { get; }
-
         public Paginated(IQueryable<T> superSet, int pageNumber, int pageSize)
         {
             if (pageNumber < 1)
@@ -50,6 +39,22 @@ namespace Canducci.Pagination
         public void Dispose()
         {            
             GC.SuppressFinalize(this);
-        }       
+        }
+
+        public static implicit operator PaginatedMetaData(Paginated<T> source)
+        {
+            return new PaginatedMetaData(
+                           source.PageCount,
+                           source.TotalItemCount,
+                           source.PageNumber,
+                           source.PageSize,
+                           source.HasPreviousPage,
+                           source.HasNextPage,
+                           source.IsFirstPage,
+                           source.IsLastPage,
+                           source.FirstItemOnPage,
+                           source.LastItemOnPage
+                           );
+        }
     }
 }

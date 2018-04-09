@@ -3,22 +3,11 @@ using System.Collections.Generic;
 
 namespace Canducci.Pagination
 {
-    public sealed class StaticPaginated<T> : List<T>, IStaticPaginated<T>
-    {
-        public int PageCount { get; }
-        public int TotalItemCount { get; }
-        public int PageNumber { get; }
-        public int PageSize { get; }
-        public bool HasPreviousPage { get; }
-        public bool HasNextPage { get; }
-        public bool IsFirstPage { get; }
-        public bool IsLastPage { get; }
-        public int FirstItemOnPage { get; }
-        public int LastItemOnPage { get; }
-
+    public sealed class StaticPaginated<T> : Bases.PaginatedBase<T>, Interfaces.IStaticPaginated<T>
+    {        
         public StaticPaginated(IEnumerable<T> subSet, int pageNumber, int pageSize, int totalItemCount)
             :base(subSet)
-        {
+        {            
             if (pageNumber < 1)
                 throw new ArgumentOutOfRangeException("pageNumber", pageNumber, "PageNumber cannot be below 1.");
             if (pageSize < 1)
@@ -35,11 +24,27 @@ namespace Canducci.Pagination
             FirstItemOnPage = (PageNumber - 1) * PageSize + 1;
             int numberOfLastItemOnPage = FirstItemOnPage + PageSize - 1;
             LastItemOnPage = numberOfLastItemOnPage > TotalItemCount ? TotalItemCount : numberOfLastItemOnPage;
-        }
+        }      
 
         public void Dispose()
         {
             GC.SuppressFinalize(this);
+        }
+
+        public static implicit operator PaginatedMetaData(StaticPaginated<T> source)
+        {
+            return new PaginatedMetaData(
+                                   source.PageCount,
+                                   source.TotalItemCount,
+                                   source.PageNumber,
+                                   source.PageSize,
+                                   source.HasPreviousPage,
+                                   source.HasNextPage,
+                                   source.IsFirstPage,
+                                   source.IsLastPage,
+                                   source.FirstItemOnPage,
+                                   source.LastItemOnPage
+                                   );
         }
     }
 }
