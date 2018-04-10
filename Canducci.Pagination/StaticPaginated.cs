@@ -24,12 +24,7 @@ namespace Canducci.Pagination
             FirstItemOnPage = (PageNumber - 1) * PageSize + 1;
             int numberOfLastItemOnPage = FirstItemOnPage + PageSize - 1;
             LastItemOnPage = numberOfLastItemOnPage > TotalItemCount ? TotalItemCount : numberOfLastItemOnPage;
-        }      
-
-        public void Dispose()
-        {
-            GC.SuppressFinalize(this);
-        }
+        }              
 
         public static implicit operator PaginatedMetaData(StaticPaginated<T> source)
         {
@@ -45,6 +40,11 @@ namespace Canducci.Pagination
                                    source.FirstItemOnPage,
                                    source.LastItemOnPage
                                    );
+        }
+
+        public void Dispose()
+        {
+            GC.SuppressFinalize(this);
         }
     }
 }

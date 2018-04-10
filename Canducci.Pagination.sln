@@ -3,18 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Canducci.Pagination", "Canducci.Pagination\Canducci.Pagination.csproj", "{177C6386-A7DF-4390-81D6-30BA01E1FC7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Canducci.Pagination", "Canducci.Pagination\Canducci.Pagination.csproj", "{177C6386-A7DF-4390-81D6-30BA01E1FC7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Canducci.Console.Test", "Canducci.Console.Test\Canducci.Console.Test.csproj", "{C5B247A7-4D1A-4706-A7D1-2CD814A5250A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Canducci.Console.Test", "Canducci.Console.Test\Canducci.Console.Test.csproj", "{C5B247A7-4D1A-4706-A7D1-2CD814A5250A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B3773826-838B-4854-89F0-73E41F3941EB}"
 	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\Downloads\paginated.png = ..\..\..\..\Downloads\paginated.png
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Canducci.WebApp.Test", "Canducci.WebApp.Test\Canducci.WebApp.Test.csproj", "{C779C622-46C2-4F64-A37F-E61E1DE924FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Canducci.WebApp.Test", "Canducci.WebApp.Test\Canducci.WebApp.Test.csproj", "{C779C622-46C2-4F64-A37F-E61E1DE924FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Canducci.Pagination.Mvc", "Canducci.Pagination.Mvc\Canducci.Pagination.Mvc.csproj", "{43DF26DE-63DC-4394-A949-1A33C0126756}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Canducci.Pagination.Mvc", "Canducci.Pagination.Mvc\Canducci.Pagination.Mvc.csproj", "{43DF26DE-63DC-4394-A949-1A33C0126756}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

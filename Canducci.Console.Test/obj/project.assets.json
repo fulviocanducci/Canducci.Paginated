@@ -3184,11 +3184,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\users\\developer\\documents\\visual studio 2017\\Projects\\Canducci.Pagination\\Canducci.Console.Test\\Canducci.Console.Test.csproj",
+      "projectUniqueName": "C:\\Users\\Developer\\documents\\visual studio 2017\\Projects\\Canducci.Pagination\\Canducci.Console.Test\\Canducci.Console.Test.csproj",
       "projectName": "Canducci.Console.Test",
-      "projectPath": "c:\\users\\developer\\documents\\visual studio 2017\\Projects\\Canducci.Pagination\\Canducci.Console.Test\\Canducci.Console.Test.csproj",
+      "projectPath": "C:\\Users\\Developer\\documents\\visual studio 2017\\Projects\\Canducci.Pagination\\Canducci.Console.Test\\Canducci.Console.Test.csproj",
       "packagesPath": "C:\\Users\\Developer\\.nuget\\packages\\",
-      "outputPath": "c:\\users\\developer\\documents\\visual studio 2017\\Projects\\Canducci.Pagination\\Canducci.Console.Test\\obj\\",
+      "outputPath": "C:\\Users\\Developer\\documents\\visual studio 2017\\Projects\\Canducci.Pagination\\Canducci.Console.Test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
@@ -3210,8 +3210,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "c:\\users\\developer\\documents\\visual studio 2017\\Projects\\Canducci.Pagination\\Canducci.Pagination\\Canducci.Pagination.csproj": {
-              "projectPath": "c:\\users\\developer\\documents\\visual studio 2017\\Projects\\Canducci.Pagination\\Canducci.Pagination\\Canducci.Pagination.csproj"
+            "C:\\Users\\Developer\\documents\\visual studio 2017\\Projects\\Canducci.Pagination\\Canducci.Pagination\\Canducci.Pagination.csproj": {
+              "projectPath": "C:\\Users\\Developer\\documents\\visual studio 2017\\Projects\\Canducci.Pagination\\Canducci.Pagination\\Canducci.Pagination.csproj"
             }
           }
         }

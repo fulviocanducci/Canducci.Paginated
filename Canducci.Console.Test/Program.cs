@@ -9,13 +9,13 @@ namespace Canducci.Console.Test
         static void Main(string[] args)
         {
             int page = 1; 
-            int total = 3;
+            int total = 10;
             //TestIEnumerableStaticPaginted(page, total);
             TestIQueryablePaginated(page, total);
             TestIEnumerableStaticPaginated(page, total);
         }
 
-        static void TestIQueryablePaginated(int page, int total)
+        static void TestIQueryablePaginated(int page, int total = 10)
         {
             using (DatabaseContext db = new DatabaseContext())
             {
@@ -54,7 +54,8 @@ namespace Canducci.Console.Test
                 .ToArray();
 
             StaticPaginated<People> paginated1 = new StaticPaginated<People>(listOfPeople1.ToArray(), page, total, countOfPeople);
-            PaginatedMetaData b1 = paginated1;
+            PaginatedMetaData b1 = paginated1.ToPaginatedMetaData();
+
         }
     }
 }

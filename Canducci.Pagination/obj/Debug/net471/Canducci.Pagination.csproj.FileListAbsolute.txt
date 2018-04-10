@@ -1,8 +1,0 @@
-c:\users\developer\documents\visual studio 2017\Projects\Canducci.Pagination\Canducci.Pagination\bin\Debug\net471\Canducci.Pagination.dll
-c:\users\developer\documents\visual studio 2017\Projects\Canducci.Pagination\Canducci.Pagination\bin\Debug\net471\Canducci.Pagination.pdb
-c:\users\developer\documents\visual studio 2017\Projects\Canducci.Pagination\Canducci.Pagination\obj\Debug\net471\Canducci.Pagination.csproj.CoreCompileInputs.cache
-c:\users\developer\documents\visual studio 2017\Projects\Canducci.Pagination\Canducci.Pagination\obj\Debug\net471\Canducci.Pagination.AssemblyInfoInputs.cache
-c:\users\developer\documents\visual studio 2017\Projects\Canducci.Pagination\Canducci.Pagination\obj\Debug\net471\Canducci.Pagination.AssemblyInfo.cs
-c:\users\developer\documents\visual studio 2017\Projects\Canducci.Pagination\Canducci.Pagination\obj\Debug\net471\Canducci.Pagination.dll
-c:\users\developer\documents\visual studio 2017\Projects\Canducci.Pagination\Canducci.Pagination\obj\Debug\net471\Canducci.Pagination.pdb
-c:\users\developer\documents\visual studio 2017\Projects\Canducci.Pagination\Canducci.Pagination\obj\Debug\net471\Canducci.Pagination.csprojResolveAssemblyReference.cache

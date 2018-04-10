@@ -4583,11 +4583,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\users\\developer\\documents\\visual studio 2017\\Projects\\Canducci.Pagination\\Canducci.Pagination.Mvc\\Canducci.Pagination.Mvc.csproj",
+      "projectUniqueName": "C:\\Users\\Developer\\documents\\visual studio 2017\\Projects\\Canducci.Pagination\\Canducci.Pagination.Mvc\\Canducci.Pagination.Mvc.csproj",
       "projectName": "Canducci.Pagination.Mvc",
-      "projectPath": "c:\\users\\developer\\documents\\visual studio 2017\\Projects\\Canducci.Pagination\\Canducci.Pagination.Mvc\\Canducci.Pagination.Mvc.csproj",
+      "projectPath": "C:\\Users\\Developer\\documents\\visual studio 2017\\Projects\\Canducci.Pagination\\Canducci.Pagination.Mvc\\Canducci.Pagination.Mvc.csproj",
       "packagesPath": "C:\\Users\\Developer\\.nuget\\packages\\",
-      "outputPath": "c:\\users\\developer\\documents\\visual studio 2017\\Projects\\Canducci.Pagination\\Canducci.Pagination.Mvc\\obj\\",
+      "outputPath": "C:\\Users\\Developer\\documents\\visual studio 2017\\Projects\\Canducci.Pagination\\Canducci.Pagination.Mvc\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [

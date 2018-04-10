@@ -35,12 +35,7 @@ namespace Canducci.Pagination
             : this(superSet.AsQueryable(), pageNumber, pageSize)
         {
         }
-
-        public void Dispose()
-        {            
-            GC.SuppressFinalize(this);
-        }
-
+        
         public static implicit operator PaginatedMetaData(Paginated<T> source)
         {
             return new PaginatedMetaData(
@@ -54,7 +49,12 @@ namespace Canducci.Pagination
                            source.IsLastPage,
                            source.FirstItemOnPage,
                            source.LastItemOnPage
-                           );
+                           ); 
+        }
+
+        public void Dispose()
+        {
+            GC.SuppressFinalize(this);
         }
     }
 }

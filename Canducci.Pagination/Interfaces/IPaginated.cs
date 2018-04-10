@@ -15,5 +15,6 @@ namespace Canducci.Pagination.Interfaces
         bool IsLastPage { get;  }
         int FirstItemOnPage { get;  }
         int LastItemOnPage { get; }
+        PaginatedMetaData ToPaginatedMetaData();
     }
 }

@@ -1,9 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFrameworks>net451;net452;net46;net461;net462;net47;net471;netstandard1.6;netstandard2.0;</TargetFrameworks>
+  <PropertyGroup>    
+    <TargetFrameworks>net451;net452;net46;net461;net462;net47;net471;netstandard1.6;netstandard2.0;</TargetFrameworks>    
+    <PackageProjectUrl>https://github.com/fulviocanducci/Canducci.Paginated</PackageProjectUrl>    
+    <RepositoryUrl>https://github.com/fulviocanducci/Canducci.Paginated</RepositoryUrl>    
+    <RepositoryType>https://github.com/fulviocanducci/Canducci.Paginated</RepositoryType>    
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>    
+    <PackageTags>Paginated</PackageTags>    
+    <Description>Note: based on repository https://github.com/TroyGoode/PagedList</Description>    
+    <PackageReleaseNotes>Add Version net451;net452;net46;net461;net462;net47;net471;netstandard1.6;netstandard2.0;</PackageReleaseNotes>        
   </PropertyGroup>
-
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.6' ">
     <PackageReference Include="System.Linq.Queryable" Version="4.3.0" />
