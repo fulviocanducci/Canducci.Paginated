@@ -14,8 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Canducci.Pagination.Mvc\Canducci.Pagination.Mvc.csproj" />
-    <ProjectReference Include="..\Canducci.Pagination\Canducci.Pagination.csproj" />
+    <ProjectReference Include="..\Canducci.Pagination.Mvc\Canducci.Pagination.Mvc.csproj" />    
   </ItemGroup>
 
 </Project>

@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.0": {
+      "Canducci.Pagination/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Canducci.Pagination.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Canducci.Pagination.dll": {}
+        }
+      },
       "Libuv/1.10.0": {
         "type": "package",
         "dependencies": {
@@ -4747,19 +4756,13 @@
           "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {}
         }
       },
-      "Canducci.Pagination/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "compile": {
-          "bin/placeholder/Canducci.Pagination.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Canducci.Pagination.dll": {}
-        }
-      },
       "Canducci.Pagination.Mvc/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Canducci.Pagination": "1.0.0",
+          "Microsoft.AspNetCore.Mvc": "2.0.3"
+        },
         "compile": {
           "bin/placeholder/Canducci.Pagination.Mvc.dll": {}
         },
@@ -4770,6 +4773,24 @@
     }
   },
   "libraries": {
+    "Canducci.Pagination/1.0.0": {
+      "sha512": "fWz9ladUa9Fd49/QD5w1k4/Q1gMRwU9RzsUO7R8DqzIY/BdFgNqhP9GVJpcA0CJtQInilkk1exjzPtESiMCPLA==",
+      "type": "package",
+      "path": "canducci.pagination/1.0.0",
+      "files": [
+        "canducci.pagination.1.0.0.nupkg.sha512",
+        "canducci.pagination.nuspec",
+        "lib/net451/Canducci.Pagination.dll",
+        "lib/net452/Canducci.Pagination.dll",
+        "lib/net46/Canducci.Pagination.dll",
+        "lib/net461/Canducci.Pagination.dll",
+        "lib/net462/Canducci.Pagination.dll",
+        "lib/net47/Canducci.Pagination.dll",
+        "lib/net471/Canducci.Pagination.dll",
+        "lib/netstandard1.6/Canducci.Pagination.dll",
+        "lib/netstandard2.0/Canducci.Pagination.dll"
+      ]
+    },
     "Libuv/1.10.0": {
       "sha512": "GsCf4q+eyaI49rCPlgYxdxa1SQCysXFFdSJWdstrwxytg4+VPYLYrXD4AT2rjHVJ+UF7SSWX9CapWEYaU4ejVQ==",
       "type": "package",
@@ -12548,11 +12569,6 @@
         "windowsazure.storage.nuspec"
       ]
     },
-    "Canducci.Pagination/1.0.0": {
-      "type": "project",
-      "path": "../Canducci.Pagination/Canducci.Pagination.csproj",
-      "msbuildProject": "../Canducci.Pagination/Canducci.Pagination.csproj"
-    },
     "Canducci.Pagination.Mvc/1.0.0": {
       "type": "project",
       "path": "../Canducci.Pagination.Mvc/Canducci.Pagination.Mvc.csproj",
@@ -12561,7 +12577,6 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
-      "Canducci.Pagination >= 1.0.0",
       "Canducci.Pagination.Mvc >= 1.0.0",
       "Microsoft.AspNetCore.All >= 2.0.6",
       "Microsoft.EntityFrameworkCore.Sqlite >= 2.0.2",
@@ -12604,9 +12619,6 @@
           "projectReferences": {
             "C:\\Users\\Developer\\documents\\visual studio 2017\\Projects\\Canducci.Pagination\\Canducci.Pagination.Mvc\\Canducci.Pagination.Mvc.csproj": {
               "projectPath": "C:\\Users\\Developer\\documents\\visual studio 2017\\Projects\\Canducci.Pagination\\Canducci.Pagination.Mvc\\Canducci.Pagination.Mvc.csproj"
-            },
-            "C:\\Users\\Developer\\documents\\visual studio 2017\\Projects\\Canducci.Pagination\\Canducci.Pagination\\Canducci.Pagination.csproj": {
-              "projectPath": "C:\\Users\\Developer\\documents\\visual studio 2017\\Projects\\Canducci.Pagination\\Canducci.Pagination\\Canducci.Pagination.csproj"
             }
           }
         }

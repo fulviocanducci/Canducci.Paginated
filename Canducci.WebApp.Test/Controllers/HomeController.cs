@@ -18,7 +18,7 @@ namespace Canducci.WebApp.Test.Controllers
         }
         public IActionResult Index(int? page)
         {
-            var result = Database.People.OrderBy(x => x.Id).ToPaginated(page ?? 1, 5);
+            var result = Database.People.OrderBy(x => x.Id).ToPaginated(page ?? 1, 2);
             return View(result);
         }
 
