@@ -2,7 +2,7 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-
+<!--
 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -105,12 +105,18 @@
         </ul>
     </div>
 </div>
+    -->
 
-
-@foreach(var item in Model)
+@foreach (var item in Model)
 {
     <div>@item.Id - @item.Name</div>
 }
 <div>
-    @Html.Page(Model)
+    @Html.PaginationPreviousNext(Model, page => Url.Action("Index", new { page = page, text = "f" }), new PaginatedOptions { NextLabel = "Próximo", PreviousLabel = "Anterior" })
+</div>
+<div>
+    @Html.PaginationNumbers(Model, page => Url.Action("Index", new { page = page, text = "f" }), new PaginatedOptions { NextLabel = "Próximo", PreviousLabel = "Anterior" })
+</div>
+<div>
+    @Html.PaginationNumbersWithPreviousNext(Model, page => Url.Action("Index", new { page = page, text = "f" }), new PaginatedOptions { NextLabel = "Próximo", PreviousLabel = "Anterior" })
 </div>
