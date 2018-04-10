@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-
 namespace Canducci.Pagination
 {
     public sealed class StaticPaginated<T> : Bases.PaginatedBase<T>, Interfaces.IStaticPaginated<T>
