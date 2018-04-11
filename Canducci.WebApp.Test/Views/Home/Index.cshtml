@@ -13,7 +13,7 @@
     @Html.Pagination(Model, page => Url.Action("Index", new { page = page }), PaginatedStyle.PreviousNext, new PaginatedOptions { NextLabel = "Próximo", PreviousLabel = "Anterior", FirstLabel = "Primeiro", LastLabel = "Último" })
 </div>
 <div>
-    @Html.Pagination(Model, page => Url.Action("Index", new { page = page}), PaginatedStyle.FirstPreviousNextLast, new PaginatedOptions { NextLabel = "Próximo", PreviousLabel = "Anterior", FirstLabel = "Primeiro", LastLabel = "Último" })
+    @Html.Pagination(Model, page => Url.Action("Index", new { page = page }), PaginatedStyle.FirstPreviousNextLast, new PaginatedOptions { NextLabel = "Próximo", PreviousLabel = "Anterior", FirstLabel = "Primeiro", LastLabel = "Último" })
 </div>
 <div>
     @Html.Pagination(Model, page => Url.Action("Index", new { page = page }), PaginatedStyle.Numbers, new PaginatedOptions { NextLabel = "Próximo", PreviousLabel = "Anterior", FirstLabel = "Primeiro", LastLabel = "Último" })
@@ -27,9 +27,35 @@
 
 <h3>TagHelper</h3>
 
-<pagination page-options="@(new PaginatedOptions { NextLabel = "Próximo", PreviousLabel = "Anterior", FirstLabel = "Primeiro", LastLabel = "Último" })"            
-            page-style="NumbersWithFirstPreviousNextLast" page-paginated="Model">
-</pagination>
+<div>
+    <pagination pagination-asp-action="Index"
+                pagination-asp-controller="Home"
+                pagination-style="PreviousNext"
+                pagination-css-class-ul="pagination"
+                pagination-paginated="Model"
+                pagination-label-next="Próximo"
+                pagination-label-previous="Anterior"
+                pagination-css-class-anchor="page-link"
+                pagination-css-class-li="page-item"
+                pagination-css-class-li-disabled="disabled">
+    </pagination>
+</div>
+<div>
+    <pagination pagination-asp-action="Index"
+                pagination-asp-controller="Home"
+                pagination-style="FirstPreviousNextLast"
+                pagination-css-class-ul="pagination"
+                pagination-paginated="Model"
+                pagination-label-next="Próximo"
+                pagination-label-previous="Anterior"
+                pagination-label-first="Primeiro"
+                pagination-label-last="Último"
+                pagination-css-class-anchor="page-link"
+                pagination-css-class-li="page-item"
+                pagination-css-class-li-disabled="disabled">
+    </pagination>
+</div>
+
 
 
 
