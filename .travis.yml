@@ -1,13 +1,8 @@
 language: csharp
-mono:
-  - latest
-  - 3.12.0
-  - 3.10.0
+mono: none
 dotnet: 2.0.0
 solution: Canducci.Pagination.sln
 install:
-  - dotnet restore Canducci.Pagination/Canducci.Pagination.csproj
-  - dotnet restore Canducci.Pagination.Mvc/Canducci.Pagination.Mvc.csproj
+  - dotnet restore Canducci.Console.Test/Canducci.Console.Test.csproj  
 script:
-  - dotnet build Canducci.Pagination/Canducci.Pagination.csproj
-  - dotnet build Canducci.Pagination.Mvc/Canducci.Pagination.Mvc.csproj
+  - dotnet build Canducci.Console.Test/Canducci.Console.Test.csproj
