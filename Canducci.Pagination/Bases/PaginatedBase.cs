@@ -19,19 +19,5 @@ namespace Canducci.Pagination.Bases
             : base(subSet)
         {
         }
-
-        public PaginatedMetaData ToPaginatedMetaData() 
-            => new PaginatedMetaData(
-                               PageCount,
-                               TotalItemCount,
-                               PageNumber,
-                               PageSize,
-                               HasPreviousPage,
-                               HasNextPage,
-                               IsFirstPage,
-                               IsLastPage,
-                               FirstItemOnPage,
-                               LastItemOnPage
-                               );
     }    
 }

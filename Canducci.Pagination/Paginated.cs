@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Canducci.Pagination.Bases;
+using Canducci.Pagination.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq; 
 namespace Canducci.Pagination
 {
-    public class Paginated<T> : Bases.PaginatedBase<T>, Interfaces.IPaginated<T>
+    public class Paginated<T> : PaginatedBase<T>, IPaginated<T>
     {
         public Paginated(IQueryable<T> superSet, int pageNumber, int pageSize)
         {
@@ -34,22 +36,6 @@ namespace Canducci.Pagination
         public Paginated(IEnumerable<T> superSet, int pageNumber, int pageSize)
             : this(superSet.AsQueryable(), pageNumber, pageSize)
         {
-        }
-        
-        public static implicit operator PaginatedMetaData(Paginated<T> source)
-        {
-            return new PaginatedMetaData(
-                           source.PageCount,
-                           source.TotalItemCount,
-                           source.PageNumber,
-                           source.PageSize,
-                           source.HasPreviousPage,
-                           source.HasNextPage,
-                           source.IsFirstPage,
-                           source.IsLastPage,
-                           source.FirstItemOnPage,
-                           source.LastItemOnPage
-                           ); 
         }
 
         public void Dispose()

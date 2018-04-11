@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Canducci.Pagination.Bases;
+using Canducci.Pagination.Interfaces;
+using System;
 using System.Collections.Generic;
 namespace Canducci.Pagination
 {
-    public sealed class StaticPaginated<T> : Bases.PaginatedBase<T>, Interfaces.IStaticPaginated<T>
+    public sealed class StaticPaginated<T> : PaginatedBase<T>, IStaticPaginated<T>
     {        
         public StaticPaginated(IEnumerable<T> subSet, int pageNumber, int pageSize, int totalItemCount)
             :base(subSet)
@@ -23,23 +25,7 @@ namespace Canducci.Pagination
             FirstItemOnPage = (PageNumber - 1) * PageSize + 1;
             int numberOfLastItemOnPage = FirstItemOnPage + PageSize - 1;
             LastItemOnPage = numberOfLastItemOnPage > TotalItemCount ? TotalItemCount : numberOfLastItemOnPage;
-        }              
-
-        public static implicit operator PaginatedMetaData(StaticPaginated<T> source)
-        {
-            return new PaginatedMetaData(
-                                   source.PageCount,
-                                   source.TotalItemCount,
-                                   source.PageNumber,
-                                   source.PageSize,
-                                   source.HasPreviousPage,
-                                   source.HasNextPage,
-                                   source.IsFirstPage,
-                                   source.IsLastPage,
-                                   source.FirstItemOnPage,
-                                   source.LastItemOnPage
-                                   );
-        }
+        } 
 
         public void Dispose()
         {
