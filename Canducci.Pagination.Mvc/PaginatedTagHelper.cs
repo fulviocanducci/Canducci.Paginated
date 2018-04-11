@@ -19,8 +19,8 @@ namespace Canducci.Pagination.Mvc
         [HtmlAttributeName(CPageOptions)]
         public PaginatedOptions PaginatedOptions { get; set; }
 
-        //[HtmlAttributeName(CPagePaginated)]
-        //public IPaginated<T> Paginated { get; set; }
+        [HtmlAttributeName(CPagePaginated)]
+        public IPaginated Paginated { get; set; }
 
         protected void Render(TagHelperContext context, TagHelperOutput output)
         {
@@ -28,7 +28,35 @@ namespace Canducci.Pagination.Mvc
             output.TagMode = TagMode.StartTagAndEndTag;
             output.Attributes.Add("class", PaginatedOptions.CssClassUl);
             //output.Content.Append(HtmlHelpers.PaginationNumbersWithPreviousNext())
-           
+            switch (PaginatedStyle)
+            {
+                case PaginatedStyle.FirstPreviousNextLast:
+                    {
+                        
+                        break;
+                    }
+                case PaginatedStyle.Numbers:
+                    {
+                        
+                        break;
+                    }
+                case PaginatedStyle.NumbersWithFirstPreviousNextLast:
+                    {
+                        
+                        break;
+                    }
+                case PaginatedStyle.NumbersWithPreviousNext:
+                    {
+                        
+                        break;
+                    }
+                case PaginatedStyle.PreviousNext:
+                    {
+                        
+                        break;
+                    }
+            }
+
         }
 
         public override void Process(TagHelperContext context, TagHelperOutput output)

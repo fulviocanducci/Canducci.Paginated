@@ -1,5 +1,8 @@
 language: csharp
-mono: none
+mono:
+  - latest
+  - 3.12.0
+  - 3.10.0
 dotnet: 2.0.0
 solution: Canducci.Pagination.sln
 install:
