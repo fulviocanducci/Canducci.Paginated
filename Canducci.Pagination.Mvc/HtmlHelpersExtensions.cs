@@ -34,7 +34,7 @@ namespace Canducci.Pagination.Mvc
             }
         }       
 
-        internal static IHtmlContentBuilder AppendHtmlTaLi(this IHtmlContentBuilder content, TagBuilder tag, string cssClass = null)
+        internal static IHtmlContentBuilder AppendHtml(this IHtmlContentBuilder content, TagBuilder tag, string cssClass = null)
         {
             TagBuilder li = new TagBuilder("li")
             {
@@ -75,32 +75,32 @@ namespace Canducci.Pagination.Mvc
         {
             TagBuilder aFirst = TagLink(paginated.IsFirstPage ? "#" : generatePageUrl(1), 
                 options.FirstLabel, 
-                options.CssClassLink);
-            content.AppendHtmlTaLi(aFirst, paginated.IsFirstPage ? options.CssClassLiDisabled : null);
+                options.CssClassAnchor);
+            content.AppendHtml(aFirst, paginated.IsFirstPage ? options.CssClassLiDisabled : null);
             return content;
         }
         internal static HtmlContentBuilder Previous<T>(HtmlContentBuilder content, IHtmlHelper htmlHelper, IPaginated<T> paginated, Func<int, string> generatePageUrl, PaginatedOptions options)
         {
             TagBuilder aPrevious = TagLink(paginated.IsFirstPage ? "#" : generatePageUrl(paginated.PageNumber - 1), 
                 options.PreviousLabel, 
-                options.CssClassLink);
-            content.AppendHtmlTaLi(aPrevious, paginated.IsFirstPage ? options.CssClassLiDisabled : null);
+                options.CssClassAnchor);
+            content.AppendHtml(aPrevious, paginated.IsFirstPage ? options.CssClassLiDisabled : null);
             return content;            
         }
         internal static HtmlContentBuilder Next<T>(HtmlContentBuilder content, IHtmlHelper htmlHelper, IPaginated<T> paginated, Func<int, string> generatePageUrl, PaginatedOptions options)
         {
             TagBuilder aNext = TagLink(paginated.IsLastPage ? "#": generatePageUrl(paginated.PageNumber + 1), 
                 options.NextLabel, 
-                options.CssClassLink);
-            content.AppendHtmlTaLi(aNext, paginated.IsLastPage ? options.CssClassLiDisabled : null);
+                options.CssClassAnchor);
+            content.AppendHtml(aNext, paginated.IsLastPage ? options.CssClassLiDisabled : null);
             return content;
         }
         internal static HtmlContentBuilder Last<T>(HtmlContentBuilder content, IHtmlHelper htmlHelper, IPaginated<T> paginated, Func<int, string> generatePageUrl, PaginatedOptions options)
         {
             TagBuilder aLast = TagLink(paginated.IsLastPage ? "#" : generatePageUrl(paginated.PageCount),
                 options.LastLabel, 
-                options.CssClassLink);
-            content.AppendHtmlTaLi(aLast, paginated.IsLastPage ? options.CssClassLiDisabled : null);
+                options.CssClassAnchor);
+            content.AppendHtml(aLast, paginated.IsLastPage ? options.CssClassLiDisabled : null);
             return content;
         }
         #endregion
@@ -185,8 +185,8 @@ namespace Canducci.Pagination.Mvc
                 .ToList()
                 .ForEach(x =>
                 {
-                    var tagLink = TagLink((metaData.PageNumber != x) ? generatePageUrl(x) : "#", x.ToString(), options.CssClassLink);
-                    content.AppendHtmlTaLi(tagLink, (metaData.PageNumber == x) 
+                    var tagLink = TagLink((metaData.PageNumber != x) ? generatePageUrl(x) : "#", x.ToString(), options.CssClassAnchor);
+                    content.AppendHtml(tagLink, (metaData.PageNumber == x) 
                         ? options.CssClassLiActive + " " + options.CssClassLi
                         : options.CssClassLi);
                 });           

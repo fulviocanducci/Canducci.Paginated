@@ -2,6 +2,15 @@
   
   <PropertyGroup>
     <TargetFrameworks>net451;net452;net46;net461;net462;net47;net471;netstandard1.6;netstandard2.0;</TargetFrameworks>
+    <Version>1.0.2</Version>
+    <Authors>Canducci</Authors>
+    <Company>Canducci</Company>
+    <PackageProjectUrl>https://github.com/fulviocanducci/Canducci.Paginated</PackageProjectUrl>
+    <PackageIconUrl>https://wyysbq.by3301.livefilestore.com/y4puDpEUEx6J41XdlqswFDCQjiqVPIFIvPgKqU3xIkWRr4FVitd0-XBV3fDANZ_aKajy-fqU4cUWrq3-er8vBmHGQ7Wq-i-oCEGui9MIQNpjQWEyBXlukPw7ORXxucUy6CGSq5gVgfuRY2I2SdVze09iymr_gEFTarF2tHAV7M_h-Dl3n3AUJU9HzvJ0su1W2yCk9PvK3Hq-bHSZ6ydg5-lDA/paginated.png</PackageIconUrl>
+    <RepositoryUrl>https://github.com/fulviocanducci/Canducci.Paginated</RepositoryUrl>
+    <RepositoryType>https://github.com/fulviocanducci/Canducci.Paginated</RepositoryType>
+    <PackageTags>Paginated Mvc Core</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.6' ">
@@ -12,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Canducci.Pagination" Version="1.0.1" />
+    <PackageReference Include="Canducci.Pagination" Version="1.0.2" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net451'">

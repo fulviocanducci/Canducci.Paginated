@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 using Microsoft.AspNetCore.Routing;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 //https://github.com/aspnet/Mvc/tree/dev/src/Microsoft.AspNetCore.Mvc.TagHelpers
 namespace Canducci.Pagination.Mvc
@@ -27,6 +28,7 @@ namespace Canducci.Pagination.Mvc
     [HtmlTargetElement("pagination", Attributes = PaginationLabelPrevious)]
     [HtmlTargetElement("pagination", Attributes = PaginationCssClassAnchor)]
     [HtmlTargetElement("pagination", Attributes = PaginationCssClassLi)]
+    [HtmlTargetElement("pagination", Attributes = PaginationCssClassLiActive)]
     [HtmlTargetElement("pagination", Attributes = PaginationCssClassLiDisabled)]
     [HtmlTargetElement("pagination", Attributes = PaginationLabelFirst)]
     [HtmlTargetElement("pagination", Attributes = PaginationLabelLast)]
@@ -46,12 +48,14 @@ namespace Canducci.Pagination.Mvc
         private const string RouteValuesPrefix = "pagination-asp-route-";
         private const string Href = "href";
         private IDictionary<string, string> _routeValues;
+        
         #endregion
 
         #region pagination_tag_name
         private const string PaginationPaginatedStyle = "pagination-style";
         private const string PaginationCssClassUl = "pagination-css-class-ul";
         private const string PaginationCssClassLi = "pagination-css-class-li";
+        private const string PaginationCssClassLiActive = "pagination-css-class-li-active";
         private const string PaginationCssClassLiDisabled = "pagination-css-class-li-disabled";
         private const string PaginationPaginated = "pagination-paginated";
         private const string PaginationLabelNext = "pagination-label-next";
@@ -67,6 +71,9 @@ namespace Canducci.Pagination.Mvc
 
         [HtmlAttributeName(PaginationCssClassLi)]
         public string CssClassLi { get; set; }
+
+        [HtmlAttributeName(PaginationCssClassLiActive)]
+        public string CssClassLiActive { get; set; } = "active";
 
         [HtmlAttributeName(PaginationCssClassLiDisabled)]
         public string CssClassLiDisabled { get; set; }
@@ -278,17 +285,23 @@ namespace Canducci.Pagination.Mvc
                     }
                 case PaginatedStyle.Numbers:
                     {
-                        
+                        Numbers(output);
                         break;
                     }
                 case PaginatedStyle.NumbersWithFirstPreviousNextLast:
                     {
-                        
+                        First(output);
+                        Previous(output);
+                        Numbers(output);
+                        Next(output);
+                        Last(output);
                         break;
                     }
                 case PaginatedStyle.NumbersWithPreviousNext:
                     {
-                        
+                        Previous(output);
+                        Numbers(output);
+                        Next(output);                        
                         break;
                     }
                 case PaginatedStyle.PreviousNext:
@@ -319,7 +332,7 @@ namespace Canducci.Pagination.Mvc
         internal TagHelperOutput First(TagHelperOutput output)
         {            
             TagBuilder tagBuilder = CreateTagBuilder(output, 1, LabelFirst, CssClassAchor);
-            output.Content.AppendHtmlTaLi(tagBuilder, Paginated.IsFirstPage ? CssClassLiDisabled + " " + CssClassLi : CssClassLi);
+            output.Content.AppendHtml(tagBuilder, Paginated.IsFirstPage ? CssClassLiDisabled + " " + CssClassLi : CssClassLi);
             return output;
         }
         #endregion
@@ -327,7 +340,7 @@ namespace Canducci.Pagination.Mvc
         internal TagHelperOutput Last(TagHelperOutput output)
         {            
             TagBuilder tagBuilder = CreateTagBuilder(output, Paginated.PageCount, LabelLast, CssClassAchor);
-            output.Content.AppendHtmlTaLi(tagBuilder, Paginated.IsLastPage ? CssClassLiDisabled + " " + CssClassLi : CssClassLi);
+            output.Content.AppendHtml(tagBuilder, Paginated.IsLastPage ? CssClassLiDisabled + " " + CssClassLi : CssClassLi);
             return output;
         }
         #endregion
@@ -336,7 +349,7 @@ namespace Canducci.Pagination.Mvc
         {
             int page = Paginated.IsFirstPage ? 1 : Paginated.PageNumber - 1;
             TagBuilder tagBuilder = CreateTagBuilder(output, page, LabelPrevious, CssClassAchor);
-            output.Content.AppendHtmlTaLi(tagBuilder, Paginated.IsFirstPage ? CssClassLiDisabled + " " + CssClassLi : CssClassLi);
+            output.Content.AppendHtml(tagBuilder, Paginated.IsFirstPage ? CssClassLiDisabled + " " + CssClassLi : CssClassLi);
             return output;
         }
 
@@ -346,7 +359,22 @@ namespace Canducci.Pagination.Mvc
         {         
             int page = Paginated.IsLastPage ? Paginated.PageCount: Paginated.PageNumber + 1;
             TagBuilder tagBuilder = CreateTagBuilder(output, page, LabelNext, CssClassAchor);
-            output.Content.AppendHtmlTaLi(tagBuilder, Paginated.IsLastPage ? CssClassLiDisabled + " " + CssClassLi : CssClassLi);
+            output.Content.AppendHtml(tagBuilder, Paginated.IsLastPage ? CssClassLiDisabled + " " + CssClassLi : CssClassLi);
+            return output;
+        }
+        #endregion
+        #region numbers
+        private TagHelperOutput Numbers(TagHelperOutput output)
+        {
+            IEnumerable<int> pages = HtmlHelpers.GetPagesForPosition(Paginated.PageNumber, Paginated.PageCount);
+            pages
+                .OrderBy(o => o)
+                .ToList()
+                .ForEach(x =>
+                {
+                    TagBuilder tagBuilder = CreateTagBuilder(output, x, x.ToString(), CssClassAchor);
+                    output.Content.AppendHtml(tagBuilder, Paginated.PageNumber == x ? CssClassLiActive + " " + CssClassLi : CssClassLi);
+                });
             return output;
         }
         #endregion

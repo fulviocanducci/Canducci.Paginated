@@ -40,5 +40,12 @@ namespace Canducci.WebApp.Test.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        [Route("materialize")]
+        public IActionResult Materialize(int? page)
+        {
+            var result = Database.People.OrderBy(x => x.Id).ToPaginated(page ?? 1, 3);
+            return View(result);
+        }
     }
 }

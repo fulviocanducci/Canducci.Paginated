@@ -10,7 +10,7 @@
     <Description>Note: based on repository https://github.com/TroyGoode/PagedList</Description>    
     <PackageReleaseNotes>Add Interface IPaginated</PackageReleaseNotes>    
     <PackageIconUrl>https://wyysbq.by3301.livefilestore.com/y4puDpEUEx6J41XdlqswFDCQjiqVPIFIvPgKqU3xIkWRr4FVitd0-XBV3fDANZ_aKajy-fqU4cUWrq3-er8vBmHGQ7Wq-i-oCEGui9MIQNpjQWEyBXlukPw7ORXxucUy6CGSq5gVgfuRY2I2SdVze09iymr_gEFTarF2tHAV7M_h-Dl3n3AUJU9HzvJ0su1W2yCk9PvK3Hq-bHSZ6ydg5-lDA/paginated.png</PackageIconUrl>    
-    <Version>1.0.1</Version>    
+    <Version>1.0.2</Version>    
     <Authors>Canducci</Authors>    
     <Product>Canducci</Product>        
   </PropertyGroup>
