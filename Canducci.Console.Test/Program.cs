@@ -30,9 +30,7 @@ namespace Canducci.Console.Test
                 Paginated<People> listOfQueryable1 = db.People
                     .OrderBy(x => x.Name)
                     .ToPaginated((page + 1), total);
-
-                PaginatedMetaData a1 = listOfQueryable1.ToPaginatedMetaData();
-                IPaginated p = listOfQueryable1 as IPaginated;                 
+              
             }
         }
         static void TestIEnumerableStaticPaginated(int page, int total = 5)
@@ -46,7 +44,7 @@ namespace Canducci.Console.Test
                 .Take(total)
                 .ToArray();
 
-            StaticPaginated<People> paginated0 = new StaticPaginated<People>(listOfPeople0.ToArray(), page, total, countOfPeople);
+            StaticPaginated<People> paginated0 = new StaticPaginated<People>(listOfPeople0, page, total, countOfPeople);
             PaginatedMetaData b0 = paginated0.ToPaginatedMetaData();
 
             page = 2;

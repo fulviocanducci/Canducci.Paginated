@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.0": {
-      "Canducci.Pagination/1.0.1": {
+      "Canducci.Pagination/1.0.2": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Canducci.Pagination.dll": {}
@@ -5042,7 +5042,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Canducci.Pagination": "1.0.1",
+          "Canducci.Pagination": "1.0.2",
           "Microsoft.AspNetCore.Mvc": "2.0.3"
         },
         "compile": {
@@ -5055,12 +5055,12 @@
     }
   },
   "libraries": {
-    "Canducci.Pagination/1.0.1": {
-      "sha512": "bpBr4KHmFLe4j0qQPGaWF8EO/F1HLXND6ZeKbVUk2qgTP++FwSk92SI5eHKOG2aJ24qlh05MDFFc9PLifGGeNg==",
+    "Canducci.Pagination/1.0.2": {
+      "sha512": "VBGa9JTPxSUxo7A0xD/W38zopdjrlVnSk1dXnBp6lrGYKCqzgrX3/zXvuDOq25AMaLmNxz+fp6Yw0WR1BSWGDA==",
       "type": "package",
-      "path": "canducci.pagination/1.0.1",
+      "path": "canducci.pagination/1.0.2",
       "files": [
-        "canducci.pagination.1.0.1.nupkg.sha512",
+        "canducci.pagination.1.0.2.nupkg.sha512",
         "canducci.pagination.nuspec",
         "lib/net451/Canducci.Pagination.dll",
         "lib/net452/Canducci.Pagination.dll",
