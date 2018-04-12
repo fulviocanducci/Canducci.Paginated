@@ -10,26 +10,26 @@
     <div>@item.Id - @item.Name</div>
 }
 <div>
-    @Html.Pagination(Model, page => Url.Action("Index", new { page = page }), PaginatedStyle.PreviousNext, new PaginatedOptions { NextLabel = "Próximo", PreviousLabel = "Anterior", FirstLabel = "Primeiro", LastLabel = "Último" })
+    @Html.Pagination(Model, current => Url.Action("Index", new { current }), PaginatedStyle.PreviousNext, new PaginatedOptions { NextLabel = "Próximo", PreviousLabel = "Anterior", FirstLabel = "Primeiro", LastLabel = "Último" })
 </div>
 <div>
-    @Html.Pagination(Model, page => Url.Action("Index", new { page = page }), PaginatedStyle.FirstPreviousNextLast, new PaginatedOptions { NextLabel = "Próximo", PreviousLabel = "Anterior", FirstLabel = "Primeiro", LastLabel = "Último" })
+    @Html.Pagination(Model, current => Url.Action("Index", new { current }), PaginatedStyle.FirstPreviousNextLast, new PaginatedOptions { NextLabel = "Próximo", PreviousLabel = "Anterior", FirstLabel = "Primeiro", LastLabel = "Último" })
 </div>
 <div>
-    @Html.Pagination(Model, page => Url.Action("Index", new { page = page }), PaginatedStyle.Numbers, new PaginatedOptions { NextLabel = "Próximo", PreviousLabel = "Anterior", FirstLabel = "Primeiro", LastLabel = "Último" })
+    @Html.Pagination(Model, current => Url.Action("Index", new { current }), PaginatedStyle.Numbers, new PaginatedOptions { NextLabel = "Próximo", PreviousLabel = "Anterior", FirstLabel = "Primeiro", LastLabel = "Último" })
 </div>
 <div>
-    @Html.Pagination(Model, page => Url.Action("Index", new { page = page }), PaginatedStyle.NumbersWithPreviousNext, new PaginatedOptions { NextLabel = "Próximo", PreviousLabel = "Anterior", FirstLabel = "Primeiro", LastLabel = "Último" })
+    @Html.Pagination(Model, current => Url.Action("Index", new { current }), PaginatedStyle.NumbersWithPreviousNext, new PaginatedOptions { NextLabel = "Próximo", PreviousLabel = "Anterior", FirstLabel = "Primeiro", LastLabel = "Último" })
 </div>
 <div>
-    @Html.Pagination(Model, page => Url.Action("Index", new { page = page }), PaginatedStyle.NumbersWithFirstPreviousNextLast, new PaginatedOptions { NextLabel = "Próximo", PreviousLabel = "Anterior", FirstLabel = "Primeiro", LastLabel = "Último" })
+    @Html.Pagination(Model, current => Url.Action("Index", new { current }), PaginatedStyle.NumbersWithFirstPreviousNextLast, new PaginatedOptions { NextLabel = "Próximo", PreviousLabel = "Anterior", FirstLabel = "Primeiro", LastLabel = "Último" })
 </div>
 
 <h3>TagHelper</h3>
 
-<div>
+<div>    
     <pagination pagination-asp-action="Index"
-                pagination-asp-controller="Home"
+                pagination-asp-controller="Home"                                
                 pagination-style="PreviousNext"
                 pagination-css-class-ul="pagination"
                 pagination-paginated="Model"

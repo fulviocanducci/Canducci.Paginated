@@ -200,7 +200,7 @@ namespace Canducci.Pagination.Mvc
                 routeValues = new RouteValueDictionary();
             }
 
-            routeValues.Add("page", page);           
+            routeValues.Add("current", page);           
 
             if (Area != null)
             {                

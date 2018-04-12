@@ -16,9 +16,9 @@ namespace Canducci.WebApp.Test.Controllers
         {
             Database = database;
         }
-        public IActionResult Index(int? page)
+        public IActionResult Index(int? current)
         {
-            var result = Database.People.OrderBy(x => x.Id).ToPaginated(page ?? 1, 3);
+            var result = Database.People.OrderBy(x => x.Id).ToPaginated(current ?? 1, 3);
             return View(result);
         }
 
@@ -42,9 +42,9 @@ namespace Canducci.WebApp.Test.Controllers
         }
 
         [Route("materialize")]
-        public IActionResult Materialize(int? page)
+        public IActionResult Materialize(int? current)
         {
-            var result = Database.People.OrderBy(x => x.Id).ToPaginated(page ?? 1, 3);
+            var result = Database.People.OrderBy(x => x.Id).ToPaginated(current ?? 1, 3);
             return View(result);
         }
     }

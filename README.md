@@ -44,14 +44,14 @@ Installing the package `Canducci.Pagination.Mvc` already integrates the package 
 #### Entity Framework
 
  ```csharp
-static void TestIQueryablePaginated(int page, int total = 5)
+static void TestIQueryablePaginated(int current, int total = 5)
 {
 	using (DatabaseContext db = new DatabaseContext())
 	{
 		Paginated<People> listOfQueryable0 = 
 			db.People
 				.OrderBy(x => x.Name)
-				.ToPaginated(page, total);
+				.ToPaginated(current, total);
 	}
 }
 ```
@@ -86,21 +86,21 @@ public class PeopleList: List<People>
 ```
 
 ```csharp
-static void TestIEnumerableStaticPaginated(int page, int total = 5)
+static void TestIEnumerableStaticPaginated(int current, int total = 5)
 {
 	PeopleList listOfAllPeople = new PeopleList();
 	int countOfPeople = listOfAllPeople.Count;
 
 	IEnumerable<People> listOfPeople0 = listOfAllPeople
 		.OrderBy(x => x.Id)
-		.Skip((page - 1) * total)
+		.Skip((current - 1) * total)
 		.Take(total)
 		.ToArray();
 
 	StaticPaginated<People> paginated0 = 
 		new StaticPaginated<People>(
 			listOfPeople0, 
-			page, 
+			current, 
 			total, 
 			countOfPeople); 
 }
@@ -122,9 +122,9 @@ public class HomeController : Controller
 		Database = database;
 	}
 
-	public IActionResult Index(int? page)
+	public IActionResult Index(int? current)
 	{
-		var result = Database.People.OrderBy(x => x.Id).ToPaginated(page ?? 1, 3);
+		var result = Database.People.OrderBy(x => x.Id).ToPaginated(current ?? 1, 3);
 		return View(result);
 	}
 }
@@ -154,19 +154,19 @@ Open the file `_ViewImports.cshtml` and add this line  `@addTagHelper *, Canducc
     <div>@item.Id - @item.Name</div>
 }
 <div>
-    @Html.Pagination(Model, page => Url.Action("Index", new { page = page }), PaginatedStyle.PreviousNext, options)
+    @Html.Pagination(Model, current => Url.Action("Index", new { current }), PaginatedStyle.PreviousNext, options)
 </div>
 <div>
-    @Html.Pagination(Model, page => Url.Action("Index", new { page = page }), PaginatedStyle.FirstPreviousNextLast, options)
+    @Html.Pagination(Model, current => Url.Action("Index", new { current }), PaginatedStyle.FirstPreviousNextLast, options)
 </div>
 <div>
-    @Html.Pagination(Model, page => Url.Action("Index", new { page = page }), PaginatedStyle.Numbers, options)
+    @Html.Pagination(Model, current => Url.Action("Index", new { current }), PaginatedStyle.Numbers, options)
 </div>
 <div>
-    @Html.Pagination(Model, page => Url.Action("Index", new { page = page }), PaginatedStyle.NumbersWithPreviousNext, options)
+    @Html.Pagination(Model, current => Url.Action("Index", new { current}), PaginatedStyle.NumbersWithPreviousNext, options)
 </div>
 <div>
-    @Html.Pagination(Model, page => Url.Action("Index", new { page = page }), PaginatedStyle.NumbersWithFirstPreviousNextLast, options)
+    @Html.Pagination(Model, current => Url.Action("Index", new { current }), PaginatedStyle.NumbersWithFirstPreviousNextLast, options)
 </div>
 
 <h3>TagHelper</h3>

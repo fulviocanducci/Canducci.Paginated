@@ -2,7 +2,7 @@
   
   <PropertyGroup>
     <TargetFrameworks>net451;net452;net46;net461;net462;net47;net471;netstandard1.6;netstandard2.0;</TargetFrameworks>
-    <Version>1.0.2</Version>
+    <Version>1.0.2.1</Version>
     <Authors>Canducci</Authors>
     <Company>Canducci</Company>
     <PackageProjectUrl>https://github.com/fulviocanducci/Canducci.Paginated</PackageProjectUrl>
@@ -11,6 +11,10 @@
     <RepositoryType>https://github.com/fulviocanducci/Canducci.Paginated</RepositoryType>
     <PackageTags>Paginated Mvc Core</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <AssemblyVersion>1.0.2.1</AssemblyVersion>
+    <FileVersion>1.0.2.1</FileVersion>
+    <PackageReleaseNotes>Changed the default variable name "page" to "current" now standard conversion to Razor Pages and Traditional Mvc Projects</PackageReleaseNotes>
+    <Description>Pagination Razor Pages and Traditional Mvc</Description>
   </PropertyGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.6' ">

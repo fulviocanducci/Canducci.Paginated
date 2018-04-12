@@ -5038,7 +5038,7 @@
           "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {}
         }
       },
-      "Canducci.Pagination.Mvc/1.0.2": {
+      "Canducci.Pagination.Mvc/1.0.2.1": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -13156,7 +13156,7 @@
         "windowsazure.storage.nuspec"
       ]
     },
-    "Canducci.Pagination.Mvc/1.0.2": {
+    "Canducci.Pagination.Mvc/1.0.2.1": {
       "type": "project",
       "path": "../Canducci.Pagination.Mvc/Canducci.Pagination.Mvc.csproj",
       "msbuildProject": "../Canducci.Pagination.Mvc/Canducci.Pagination.Mvc.csproj"
@@ -13164,7 +13164,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
-      "Canducci.Pagination.Mvc >= 1.0.2",
+      "Canducci.Pagination.Mvc >= 1.0.2.1",
       "Microsoft.AspNetCore.All >= 2.0.6",
       "Microsoft.EntityFrameworkCore.Sqlite >= 2.0.2",
       "Microsoft.NETCore.App >= 2.0.0",

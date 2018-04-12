@@ -1,0 +1,46 @@
+﻿@page "page-{current=1}"
+@model PeoplesModel
+@{
+}
+<br />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="width:5%">Id</th>
+            <th style="width:95%">Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Items)
+        {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+        </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="2" class="text-center">
+                <pagination pagination-asp-page="Peoples" 
+                            pagination-asp-page-handler="page-{current=1}"                             
+                            pagination-style="NumbersWithFirstPreviousNextLast"
+                            pagination-css-class-li-active="active"
+                            pagination-css-class-ul="pagination"
+                            pagination-paginated="Model.Items"
+                            pagination-label-next="Próximo"
+                            pagination-label-previous="Anterior"
+                            pagination-label-first="Primeiro"
+                            pagination-label-last="Último"
+                            pagination-css-class-anchor="page-link"
+                            pagination-css-class-li="page-item"
+                            pagination-css-class-li-disabled="disabled">
+                </pagination>
+            </td>
+        </tr>
+    </tfoot>
+</table>
+
+
+
+<a asp-page="Peoples">Simulação</a>
