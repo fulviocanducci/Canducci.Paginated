@@ -344,3 +344,4 @@ namespace Canducci.WebAppRazorPages.Test.Pages
     </tfoot>
 </table>
 ```
+[![Pagination-Example](https://1drv.ms/u/s!AnsRBim0vkmtg8R5_0hnujhvild1uw)](https://1drv.ms/u/s!AnsRBim0vkmtg8R5_0hnujhvild1uw)
