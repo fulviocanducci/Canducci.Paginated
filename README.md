@@ -261,3 +261,86 @@ Open the file `_ViewImports.cshtml` and add this line  `@addTagHelper *, Canducc
     </pagination>
 </div>
 ```
+
+---
+
+# Razor Pages
+
+- ***PageModel Peoples***
+
+```csharp
+using System.Linq;
+using Canducci.Pagination;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+namespace Canducci.WebAppRazorPages.Test.Pages
+{
+    public class PeoplesModel : PageModel
+    {
+        private readonly DatabaseContext Context;
+        public PeoplesModel(DatabaseContext context)
+        {
+            Context = context;            
+        }
+
+        public Paginated<People> Items { get; private set; }
+        
+        public void OnGet(int? current)
+        {            
+            Items = Context.People
+                .OrderBy(x => x.Name)
+                .OrderBy(x => x.Id)
+                .ToPaginated(current ?? 1, 4);
+        }
+    }
+}
+```
+
+- ***View Peoples***
+
+```csharp
+@page "page-{current=1}"
+@model PeoplesModel
+<br />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="width:5%">Id</th>
+            <th style="width:95%">Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Items)
+        {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+        </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="2" class="text-center">
+                <pagination pagination-asp-page="Peoples"
+                            pagination-asp-page-handler="page-{current=1}"
+                            pagination-style="NumbersWithFirstPreviousNextLast"
+                            pagination-css-class-li-active="active"
+                            pagination-css-class-ul="pagination"
+                            pagination-paginated="Model.Items"
+                            pagination-label-next="Próximo"
+                            pagination-label-previous="Anterior"
+                            pagination-label-first="Primeiro"
+                            pagination-label-last="Último"
+                            pagination-css-class-anchor="page-link"
+                            pagination-css-class-li="page-item"
+                            pagination-css-class-li-disabled="disabled">
+                </pagination>
+            </td>            
+        </tr>
+        <tr>
+            <td colspan="2" class="text-center">
+                @Html.Pagination(Model.Items, current => Url.Page("Peoples", new { current }), PaginatedStyle.NumbersWithFirstPreviousNextLast, new PaginatedOptions { NextLabel = "Próximo", PreviousLabel = "Anterior", FirstLabel = "Primeiro", LastLabel = "Último" })
+            </td>
+        </tr>
+    </tfoot>
+</table>
+```

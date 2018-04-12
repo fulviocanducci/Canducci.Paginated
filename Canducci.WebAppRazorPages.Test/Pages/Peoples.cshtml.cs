@@ -1,8 +1,6 @@
 using System.Linq;
 using Canducci.Pagination;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-
 namespace Canducci.WebAppRazorPages.Test.Pages
 {
     public class PeoplesModel : PageModel

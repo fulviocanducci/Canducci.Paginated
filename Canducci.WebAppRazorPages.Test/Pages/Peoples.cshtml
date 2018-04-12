@@ -1,7 +1,5 @@
 ﻿@page "page-{current=1}"
 @model PeoplesModel
-@{
-}
 <br />
 <table class="table table-striped">
     <thead>
@@ -22,8 +20,8 @@
     <tfoot>
         <tr>
             <td colspan="2" class="text-center">
-                <pagination pagination-asp-page="Peoples" 
-                            pagination-asp-page-handler="page-{current=1}"                             
+                <pagination pagination-asp-page="Peoples"
+                            pagination-asp-page-handler="page-{current=1}"
                             pagination-style="NumbersWithFirstPreviousNextLast"
                             pagination-css-class-li-active="active"
                             pagination-css-class-ul="pagination"
@@ -36,11 +34,12 @@
                             pagination-css-class-li="page-item"
                             pagination-css-class-li-disabled="disabled">
                 </pagination>
+            </td>            
+        </tr>
+        <tr>
+            <td colspan="2" class="text-center">
+                @Html.Pagination(Model.Items, current => Url.Page("Peoples", new { current }), PaginatedStyle.NumbersWithFirstPreviousNextLast, new PaginatedOptions { NextLabel = "Próximo", PreviousLabel = "Anterior", FirstLabel = "Primeiro", LastLabel = "Último" })
             </td>
         </tr>
     </tfoot>
 </table>
-
-
-
-<a asp-page="Peoples">Simulação</a>
