@@ -344,4 +344,4 @@ namespace Canducci.WebAppRazorPages.Test.Pages
     </tfoot>
 </table>
 ```
-[![Pagination-Example](https://1drv.ms/u/s!AnsRBim0vkmtg8R5_0hnujhvild1uw)](https://1drv.ms/u/s!AnsRBim0vkmtg8R5_0hnujhvild1uw)
+[![Pagination-Example](https://8yi72a.by3301.livefilestore.com/y4pvOyEdXcboy4Gp0usXkb_9TGgEJcwcPSr0yg7IvF_Qnhqe_dcZF1swtL4Rfff3ZWo1ESxkg6SfwTO0urqaw3lOpIDtfoTKh6_VVPOsaRAYfRzy6lwQ1mAmBU57EMdyjZTrb7hiBi8wWPY2bDxREn9s6zFoDGY3yvr3tsD1HbERn2TQ5loOYaUkEX2t_1yB34kbBMnyp30zZkcktoahCKDFw/savebootstrap.png)](https://8yi72a.by3301.livefilestore.com/y4pvOyEdXcboy4Gp0usXkb_9TGgEJcwcPSr0yg7IvF_Qnhqe_dcZF1swtL4Rfff3ZWo1ESxkg6SfwTO0urqaw3lOpIDtfoTKh6_VVPOsaRAYfRzy6lwQ1mAmBU57EMdyjZTrb7hiBi8wWPY2bDxREn9s6zFoDGY3yvr3tsD1HbERn2TQ5loOYaUkEX2t_1yB34kbBMnyp30zZkcktoahCKDFw/savebootstrap.png)
