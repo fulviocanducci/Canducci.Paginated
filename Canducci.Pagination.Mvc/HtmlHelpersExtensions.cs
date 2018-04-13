@@ -154,8 +154,8 @@ namespace Canducci.Pagination.Mvc
                 .ToList()
                 .ForEach(x =>
                 {
-                    var tagLink = TagLink((metaData.PageNumber != x) ? generatePageUrl(x) : "#", x.ToString(), options.CssClassAnchor);
-                    content.AppendHtml(tagLink, (metaData.PageNumber == x) 
+                    var tagLink = TagLink((paginated.PageNumber != x) ? generatePageUrl(x) : "#", x.ToString(), options.CssClassAnchor);
+                    content.AppendHtml(tagLink, (paginated.PageNumber == x) 
                         ? options.CssClassLiActive + " " + options.CssClassLi
                         : options.CssClassLi);
                 });           

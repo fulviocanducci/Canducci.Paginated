@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Canducci.Pagination;
-using Canducci.Pagination.Interfaces;
-
 namespace Canducci.Console.Test
 {
     class Program
@@ -12,7 +9,7 @@ namespace Canducci.Console.Test
         {
            
             int page = 1; 
-            int total = 5;            
+            int total = 2;            
             TestIQueryablePaginated(page, total);
             TestIEnumerableStaticPaginated(page, total);
 
@@ -22,18 +19,27 @@ namespace Canducci.Console.Test
         {
             using (DatabaseContext db = new DatabaseContext())
             {
+                var count = db.People.Count();
                 Paginated<People> listOfQueryable0 = db.People
                     .OrderBy(x => x.Name)
                     .ToPaginated(page, total);
-                
-                PaginatedMetaData a0 = listOfQueryable0.ToPaginatedMetaData();
 
                 Paginated<People> listOfQueryable1 = db.People
                     .OrderBy(x => x.Name)
                     .ToPaginated((page + 1), total);
 
-                //((IPaginated)listOfQueryable0).p
-              
+                PaginatedMetaData am0 = listOfQueryable0.ToPaginatedMetaData();
+                PaginatedMetaData am1 = listOfQueryable1.ToPaginatedMetaData();
+
+                int[] ap0 = listOfQueryable0.Pages.ToArray();                
+                int[] ap1 = listOfQueryable1.Pages.ToArray();
+
+                listOfQueryable0.SetPages(1);
+                int[] ap3 = listOfQueryable0.Pages.ToArray();
+
+                listOfQueryable1.SetPages(1);
+                int[] ap4 = listOfQueryable1.Pages.ToArray();
+
             }
         }
         static void TestIEnumerableStaticPaginated(int page, int total = 5)
@@ -48,19 +54,21 @@ namespace Canducci.Console.Test
                 .ToArray();
 
             StaticPaginated<People> paginated0 = new StaticPaginated<People>(listOfPeople0, page, total, countOfPeople);
-            PaginatedMetaData b0 = paginated0.ToPaginatedMetaData();
 
-            page = 2;
+            page += 1;
             IEnumerable<People> listOfPeople1 = listOfAllPeople
                 .OrderBy(x => x.Id)
-                .Skip((page - 1) * total)
+                .Skip((page) * total)
                 .Take(total)
                 .ToArray();
 
             StaticPaginated<People> paginated1 = new StaticPaginated<People>(listOfPeople1.ToArray(), page, total, countOfPeople);
-            PaginatedMetaData b1 = paginated1.ToPaginatedMetaData();
 
-            IPaginated p = paginated1 as IPaginated;
+            PaginatedMetaData bm0 = paginated0.ToPaginatedMetaData();
+            PaginatedMetaData bm1 = paginated1.ToPaginatedMetaData();
+
+            var ap0 = paginated0.Pages;
+            var ap1 = paginated1.Pages;
 
         }
     }

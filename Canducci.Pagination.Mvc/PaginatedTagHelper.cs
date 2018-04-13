@@ -365,7 +365,7 @@ namespace Canducci.Pagination.Mvc
         #endregion
         #region numbers
         private TagHelperOutput Numbers(TagHelperOutput output)
-        {            
+        {
             Paginated
                 .Pages
                 .ToList()

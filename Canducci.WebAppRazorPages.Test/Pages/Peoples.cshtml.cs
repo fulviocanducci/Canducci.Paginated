@@ -18,7 +18,7 @@ namespace Canducci.WebAppRazorPages.Test.Pages
             Items = Context.People
                 .OrderBy(x => x.Name)
                 .OrderBy(x => x.Id)
-                .ToPaginated(current ?? 1, 4);
+                .ToPaginated(current ?? 1, 2);
         }
     }
 }

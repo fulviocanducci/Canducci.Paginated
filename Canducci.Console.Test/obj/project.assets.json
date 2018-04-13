@@ -2,15 +2,6 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.0": {
-      "Canducci.Pagination/1.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/Canducci.Pagination.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Canducci.Pagination.dll": {}
-        }
-      },
       "Microsoft.CSharp/4.4.0": {
         "type": "package",
         "compile": {
@@ -849,28 +840,20 @@
         "compile": {
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
+      },
+      "Canducci.Pagination/1.0.3": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Canducci.Pagination.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Canducci.Pagination.dll": {}
+        }
       }
     }
   },
   "libraries": {
-    "Canducci.Pagination/1.0.1": {
-      "sha512": "bpBr4KHmFLe4j0qQPGaWF8EO/F1HLXND6ZeKbVUk2qgTP++FwSk92SI5eHKOG2aJ24qlh05MDFFc9PLifGGeNg==",
-      "type": "package",
-      "path": "canducci.pagination/1.0.1",
-      "files": [
-        "canducci.pagination.1.0.1.nupkg.sha512",
-        "canducci.pagination.nuspec",
-        "lib/net451/Canducci.Pagination.dll",
-        "lib/net452/Canducci.Pagination.dll",
-        "lib/net46/Canducci.Pagination.dll",
-        "lib/net461/Canducci.Pagination.dll",
-        "lib/net462/Canducci.Pagination.dll",
-        "lib/net47/Canducci.Pagination.dll",
-        "lib/net471/Canducci.Pagination.dll",
-        "lib/netstandard1.6/Canducci.Pagination.dll",
-        "lib/netstandard2.0/Canducci.Pagination.dll"
-      ]
-    },
     "Microsoft.CSharp/4.4.0": {
       "sha512": "vvVR/B08YVghQ4jHEloxqw2ZWzEGE1AOA5E0DioUM3ujbXz6FD3AfB/0Jl2ohJPd0nXYGwmPe1En6HTsSriq1A==",
       "type": "package",
@@ -3179,11 +3162,16 @@
         "system.threading.tasks.4.0.11.nupkg.sha512",
         "system.threading.tasks.nuspec"
       ]
+    },
+    "Canducci.Pagination/1.0.3": {
+      "type": "project",
+      "path": "../Canducci.Pagination/Canducci.Pagination.csproj",
+      "msbuildProject": "../Canducci.Pagination/Canducci.Pagination.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
-      "Canducci.Pagination >= 1.0.1",
+      "Canducci.Pagination >= 1.0.3",
       "Microsoft.EntityFrameworkCore.Sqlite >= 2.0.2",
       "Microsoft.NETCore.App >= 2.0.0"
     ]
@@ -3221,7 +3209,11 @@
       },
       "frameworks": {
         "netcoreapp2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Developer\\documents\\visual studio 2017\\Projects\\Canducci.Pagination\\Canducci.Pagination\\Canducci.Pagination.csproj": {
+              "projectPath": "C:\\Users\\Developer\\documents\\visual studio 2017\\Projects\\Canducci.Pagination\\Canducci.Pagination\\Canducci.Pagination.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -3233,10 +3225,6 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "Canducci.Pagination": {
-            "target": "Package",
-            "version": "[1.0.1, )"
-          },
           "Microsoft.EntityFrameworkCore.Sqlite": {
             "target": "Package",
             "version": "[2.0.2, )"
