@@ -1,4 +1,6 @@
-﻿namespace Canducci.Pagination
+﻿using System.Collections.Generic;
+
+namespace Canducci.Pagination
 {
     public struct PaginatedMetaData
     {
@@ -12,7 +14,8 @@
             bool isFirstPage,
             bool isLastPage,
             int firstItemOnPage,
-            int lastItemOnPage)
+            int lastItemOnPage,
+            SortedSet<int> pages)
         {
             PageCount = pageCount;
             TotalItemCount = totalItemCount;
@@ -24,6 +27,7 @@
             IsLastPage = isLastPage;
             FirstItemOnPage = firstItemOnPage;
             LastItemOnPage = lastItemOnPage;
+            Pages = pages;
         }
         public int PageCount { get; }
         public int TotalItemCount { get; }
@@ -35,5 +39,6 @@
         public bool IsLastPage { get; }
         public int FirstItemOnPage { get; }
         public int LastItemOnPage { get; }
+        public SortedSet<int> Pages { get; }
     }
 }

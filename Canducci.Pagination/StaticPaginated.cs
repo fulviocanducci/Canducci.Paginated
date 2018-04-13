@@ -25,6 +25,7 @@ namespace Canducci.Pagination
             FirstItemOnPage = (PageNumber - 1) * PageSize + 1;
             int numberOfLastItemOnPage = FirstItemOnPage + PageSize - 1;
             LastItemOnPage = numberOfLastItemOnPage > TotalItemCount ? TotalItemCount : numberOfLastItemOnPage;
+            SetPages();
         } 
 
         public void Dispose()

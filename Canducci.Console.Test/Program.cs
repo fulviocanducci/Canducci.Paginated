@@ -10,11 +10,12 @@ namespace Canducci.Console.Test
     {
         static void Main(string[] args)
         {
+           
             int page = 1; 
-            int total = 5;
-            //TestIEnumerableStaticPaginted(page, total);
+            int total = 5;            
             TestIQueryablePaginated(page, total);
             TestIEnumerableStaticPaginated(page, total);
+
         }
 
         static void TestIQueryablePaginated(int page, int total = 5)
@@ -30,6 +31,8 @@ namespace Canducci.Console.Test
                 Paginated<People> listOfQueryable1 = db.People
                     .OrderBy(x => x.Name)
                     .ToPaginated((page + 1), total);
+
+                //((IPaginated)listOfQueryable0).p
               
             }
         }

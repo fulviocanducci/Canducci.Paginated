@@ -12,7 +12,7 @@ namespace Canducci.Pagination.Mvc
 {
     public static class HtmlHelpers
     {
-        #region internals
+        #region get_value
         internal static object GetValue<TModel, TProperty>(this HtmlHelper<TModel> htmlHelper, Expression<Func<TModel, TProperty>> expression)
             where TModel : class
         {
@@ -24,7 +24,9 @@ namespace Canducci.Pagination.Mvc
             Func<TModel, TProperty> func = expression.Compile();
             return func(model);
         }
-       
+        #endregion
+
+        #region internals
         internal static string ToStringContent(this IHtmlContent content)
         {
             using (var writer = new StringWriter())
@@ -51,137 +53,104 @@ namespace Canducci.Pagination.Mvc
         {
             TagBuilder tag = new TagBuilder("a");
             tag.Attributes.Add("href", url);
-            if (!string.IsNullOrEmpty(cssClass))
-            {
-                tag.Attributes.Add("class", cssClass);
-            }
+            if (!string.IsNullOrEmpty(cssClass)) tag.Attributes.Add("class", cssClass);            
             tag.InnerHtml.Append(label);            
             return tag;
         }
 
         internal static HtmlContentBuilder CreateHtmlContentBuilder(PaginatedOptions options)
         {
+            if (options == null) new PaginatedOptions();
             HtmlContentBuilder content = new HtmlContentBuilder();
             content.AppendHtml($"<ul class=\"{options.CssClassUl}\">");
             content.AppendHtmlLine(Environment.NewLine);
             return content;
-
         }
 
         #endregion
 
         #region first_previous_next_last
-        internal static HtmlContentBuilder First<T>(HtmlContentBuilder content, IHtmlHelper htmlHelper, IPaginated<T> paginated, Func<int, string> generatePageUrl, PaginatedOptions options)
+        internal static HtmlContentBuilder First<T>(HtmlContentBuilder content, IPaginated<T> paginated, Func<int, string> generatePageUrl, PaginatedOptions options)
         {
-            TagBuilder aFirst = TagLink(paginated.IsFirstPage ? "#" : generatePageUrl(1), 
-                options.FirstLabel, 
-                options.CssClassAnchor);
-            content.AppendHtml(aFirst, paginated.IsFirstPage ? options.CssClassLiDisabled : null);
+            TagBuilder tag = TagLink(paginated.IsFirstPage ? "#" : generatePageUrl(1), options.FirstLabel, options.CssClassAnchor);
+            content.AppendHtml(tag, paginated.IsFirstPage ? options.CssClassLiDisabled : null);
             return content;
         }
-        internal static HtmlContentBuilder Previous<T>(HtmlContentBuilder content, IHtmlHelper htmlHelper, IPaginated<T> paginated, Func<int, string> generatePageUrl, PaginatedOptions options)
+        internal static HtmlContentBuilder Previous<T>(HtmlContentBuilder content, IPaginated<T> paginated, Func<int, string> generatePageUrl, PaginatedOptions options)
         {
-            TagBuilder aPrevious = TagLink(paginated.IsFirstPage ? "#" : generatePageUrl(paginated.PageNumber - 1), 
-                options.PreviousLabel, 
-                options.CssClassAnchor);
-            content.AppendHtml(aPrevious, paginated.IsFirstPage ? options.CssClassLiDisabled : null);
+            TagBuilder tag = TagLink(paginated.IsFirstPage ? "#" : generatePageUrl(paginated.PageNumber - 1), options.PreviousLabel, options.CssClassAnchor);
+            content.AppendHtml(tag, paginated.IsFirstPage ? options.CssClassLiDisabled : null);
             return content;            
         }
-        internal static HtmlContentBuilder Next<T>(HtmlContentBuilder content, IHtmlHelper htmlHelper, IPaginated<T> paginated, Func<int, string> generatePageUrl, PaginatedOptions options)
+        internal static HtmlContentBuilder Next<T>(HtmlContentBuilder content, IPaginated<T> paginated, Func<int, string> generatePageUrl, PaginatedOptions options)
         {
-            TagBuilder aNext = TagLink(paginated.IsLastPage ? "#": generatePageUrl(paginated.PageNumber + 1), 
-                options.NextLabel, 
-                options.CssClassAnchor);
-            content.AppendHtml(aNext, paginated.IsLastPage ? options.CssClassLiDisabled : null);
+            TagBuilder tag = TagLink(paginated.IsLastPage ? "#": generatePageUrl(paginated.PageNumber + 1), options.NextLabel, options.CssClassAnchor);
+            content.AppendHtml(tag, paginated.IsLastPage ? options.CssClassLiDisabled : null);
             return content;
         }
-        internal static HtmlContentBuilder Last<T>(HtmlContentBuilder content, IHtmlHelper htmlHelper, IPaginated<T> paginated, Func<int, string> generatePageUrl, PaginatedOptions options)
+        internal static HtmlContentBuilder Last<T>(HtmlContentBuilder content, IPaginated<T> paginated, Func<int, string> generatePageUrl, PaginatedOptions options)
         {
-            TagBuilder aLast = TagLink(paginated.IsLastPage ? "#" : generatePageUrl(paginated.PageCount),
-                options.LastLabel, 
-                options.CssClassAnchor);
-            content.AppendHtml(aLast, paginated.IsLastPage ? options.CssClassLiDisabled : null);
+            TagBuilder tag = TagLink(paginated.IsLastPage ? "#" : generatePageUrl(paginated.PageCount), options.LastLabel, options.CssClassAnchor);
+            content.AppendHtml(tag, paginated.IsLastPage ? options.CssClassLiDisabled : null);
             return content;
         }
         #endregion
 
         #region page_numbers_with_first_previous_next_last
-        internal static IHtmlContent PaginationNumbersWithFirstPreviousNextLast<T>(this IHtmlHelper htmlHelper, IPaginated<T> paginated, Func<int, string> generatePageUrl, PaginatedOptions options = null)
-        {
-            if (options == null) options = new PaginatedOptions();
+        internal static IHtmlContent PaginationNumbersWithFirstPreviousNextLast<T>(IPaginated<T> paginated, Func<int, string> generatePageUrl, PaginatedOptions options = null)
+        {            
             HtmlContentBuilder content = CreateHtmlContentBuilder(options);
-            First(content, htmlHelper, paginated, generatePageUrl, options);
-            Previous(content, htmlHelper, paginated, generatePageUrl, options);
-            Numbers(content, htmlHelper, paginated, generatePageUrl, options);
-            Next(content, htmlHelper, paginated, generatePageUrl, options);
-            Last(content, htmlHelper, paginated, generatePageUrl, options);
+            First(content, paginated, generatePageUrl, options);
+            Previous(content, paginated, generatePageUrl, options);
+            Numbers(content, paginated, generatePageUrl, options);
+            Next(content, paginated, generatePageUrl, options);
+            Last(content, paginated, generatePageUrl, options);
             content.AppendHtml("</ul>");
             return content;
         }
         #endregion
 
         #region page_numbers_with_previous_next
-        internal static IHtmlContent PaginationNumbersWithPreviousNext<T>(this IHtmlHelper htmlHelper, IPaginated<T> paginated, Func<int, string> generatePageUrl, PaginatedOptions options = null)
-        {
-            if (options == null) options = new PaginatedOptions();
+        internal static IHtmlContent PaginationNumbersWithPreviousNext<T>(IPaginated<T> paginated, Func<int, string> generatePageUrl, PaginatedOptions options = null)
+        {            
             HtmlContentBuilder content = CreateHtmlContentBuilder(options);
-            Previous(content, htmlHelper, paginated, generatePageUrl, options);
-            Numbers(content, htmlHelper, paginated, generatePageUrl, options);
-            Next(content, htmlHelper, paginated, generatePageUrl, options);
+            Previous(content, paginated, generatePageUrl, options);
+            Numbers(content, paginated, generatePageUrl, options);
+            Next(content, paginated, generatePageUrl, options);
             content.AppendHtml("</ul>");
             return content;
         }
         #endregion
 
         #region page_first_previous_next_last
-        internal static IHtmlContent PaginationFirstPreviousNextLast<T>(this IHtmlHelper htmlHelper, IPaginated<T> paginated, Func<int, string> generatePageUrl, PaginatedOptions options = null)
-        {
-            if (options == null) options = new PaginatedOptions();
+        internal static IHtmlContent PaginationFirstPreviousNextLast<T>(IPaginated<T> paginated, Func<int, string> generatePageUrl, PaginatedOptions options = null)
+        {            
             HtmlContentBuilder content = CreateHtmlContentBuilder(options);
-            First(content, htmlHelper, paginated, generatePageUrl, options);
-            Previous(content, htmlHelper, paginated, generatePageUrl, options);
-            Next(content, htmlHelper, paginated, generatePageUrl, options);
-            Last(content, htmlHelper, paginated, generatePageUrl, options);
+            First(content, paginated, generatePageUrl, options);
+            Previous(content, paginated, generatePageUrl, options);
+            Next(content, paginated, generatePageUrl, options);
+            Last(content, paginated, generatePageUrl, options);
             content.AppendHtml("</ul>");
             return content;
         }
         #endregion
 
         #region page_previous_next
-        internal static IHtmlContent PaginationPreviousNext<T>(this IHtmlHelper htmlHelper, IPaginated<T> paginated, Func<int, string> generatePageUrl, PaginatedOptions options = null)
-        {
-            if (options == null) options = new PaginatedOptions();
+        internal static IHtmlContent PaginationPreviousNext<T>(IPaginated<T> paginated, Func<int, string> generatePageUrl, PaginatedOptions options = null)
+        {            
             HtmlContentBuilder content = CreateHtmlContentBuilder(options);
-            Previous(content, htmlHelper, paginated, generatePageUrl, options);
-            Next(content, htmlHelper, paginated, generatePageUrl, options);
+            Previous(content, paginated, generatePageUrl, options);
+            Next(content, paginated, generatePageUrl, options);
             content.AppendHtml("</ul>");
             return content;
         }
         #endregion
 
         #region page_numbers
-        internal static IEnumerable<int> GetPagesForPosition(int position, int count)
-        {
-            int interaction = 3;
-            int pageNumber = position;
-            while (interaction >= 0 && pageNumber > 0)
-            {
-                yield return pageNumber--;
-                interaction--;
-            }
-            interaction = 0;
-            pageNumber = position;
-            while (interaction < 3 && pageNumber < count)
-            {
-                yield return ++pageNumber;
-                interaction++;
-            }
-        }
-        internal static HtmlContentBuilder Numbers<T>(HtmlContentBuilder content, IHtmlHelper htmlHelper, IPaginated<T> paginated, Func<int, string> generatePageUrl, PaginatedOptions options)
-        {            
-            PaginatedMetaData metaData = paginated.ToPaginatedMetaData();
-            IEnumerable<int> pages = GetPagesForPosition(metaData.PageNumber, metaData.PageCount);
-            pages.OrderBy(o => o)
+        internal static HtmlContentBuilder Numbers<T>(HtmlContentBuilder content, IPaginated<T> paginated, Func<int, string> generatePageUrl, PaginatedOptions options)
+        {   
+            paginated
+                .Pages
                 .ToList()
                 .ForEach(x =>
                 {
@@ -193,11 +162,10 @@ namespace Canducci.Pagination.Mvc
             return content;
         }
 
-        internal static IHtmlContent PaginationNumbers<T>(this IHtmlHelper htmlHelper, IPaginated<T> paginated, Func<int, string> generatePageUrl, PaginatedOptions options = null)
-        {
-            if (options == null) options = new PaginatedOptions();
+        internal static IHtmlContent PaginationNumbers<T>(IPaginated<T> paginated, Func<int, string> generatePageUrl, PaginatedOptions options = null)
+        {            
             HtmlContentBuilder content = CreateHtmlContentBuilder(options);
-            Numbers(content, htmlHelper, paginated, generatePageUrl, options);
+            Numbers(content, paginated, generatePageUrl, options);
             content.AppendHtml("</ul>");
             return content;
         }
@@ -210,27 +178,27 @@ namespace Canducci.Pagination.Mvc
             {
                 case PaginatedStyle.FirstPreviousNextLast: 
                     {
-                        content = PaginationFirstPreviousNextLast(htmlHelper, paginated, generatePageUrl, options);
+                        content = PaginationFirstPreviousNextLast(paginated, generatePageUrl, options);
                         break;
                     }
                 case PaginatedStyle.Numbers:
                     {
-                        content = PaginationNumbers(htmlHelper, paginated, generatePageUrl, options);
+                        content = PaginationNumbers(paginated, generatePageUrl, options);
                         break;
                     }
                 case PaginatedStyle.NumbersWithFirstPreviousNextLast:
                     {
-                        content = PaginationNumbersWithFirstPreviousNextLast(htmlHelper, paginated, generatePageUrl, options);
+                        content = PaginationNumbersWithFirstPreviousNextLast(paginated, generatePageUrl, options);
                         break;
                     }
                 case PaginatedStyle.NumbersWithPreviousNext:
                     {
-                        content = PaginationNumbersWithPreviousNext(htmlHelper, paginated, generatePageUrl, options);
+                        content = PaginationNumbersWithPreviousNext(paginated, generatePageUrl, options);
                         break;
                     }
                 case PaginatedStyle.PreviousNext:
                     {
-                        content = PaginationPreviousNext(htmlHelper, paginated, generatePageUrl, options);
+                        content = PaginationPreviousNext(paginated, generatePageUrl, options);
                         break;
                     }
             }

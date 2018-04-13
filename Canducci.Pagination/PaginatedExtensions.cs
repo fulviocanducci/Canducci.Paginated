@@ -26,7 +26,8 @@ namespace Canducci.Pagination
                                    source.IsFirstPage,
                                    source.IsLastPage,
                                    source.FirstItemOnPage,
-                                   source.LastItemOnPage
+                                   source.LastItemOnPage,
+                                   source.Pages
                                    );
         }       
     }

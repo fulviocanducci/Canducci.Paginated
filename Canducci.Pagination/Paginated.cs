@@ -31,6 +31,7 @@ namespace Canducci.Pagination
                     ? superSet.Skip(0).Take(pageSize).ToList()
                     : superSet.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList()
                 );
+            SetPages();
         }
 
         public Paginated(IEnumerable<T> superSet, int pageNumber, int pageSize)

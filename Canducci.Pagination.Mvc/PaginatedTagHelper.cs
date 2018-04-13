@@ -365,10 +365,9 @@ namespace Canducci.Pagination.Mvc
         #endregion
         #region numbers
         private TagHelperOutput Numbers(TagHelperOutput output)
-        {
-            IEnumerable<int> pages = HtmlHelpers.GetPagesForPosition(Paginated.PageNumber, Paginated.PageCount);
-            pages
-                .OrderBy(o => o)
+        {            
+            Paginated
+                .Pages
                 .ToList()
                 .ForEach(x =>
                 {

@@ -14,7 +14,9 @@ namespace Canducci.Pagination.Interfaces
         bool IsFirstPage { get; }
         bool IsLastPage { get; }
         int FirstItemOnPage { get; }
-        int LastItemOnPage { get; }       
+        int LastItemOnPage { get; }
+        SortedSet<int> Pages { get; }
+        void SetPages(int count = 3);
     }
 
     public interface IPaginated<T> : IEnumerable<T>, IList<T>, IEnumerable, IList, IPaginated { }
