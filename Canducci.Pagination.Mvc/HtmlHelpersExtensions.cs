@@ -148,7 +148,9 @@ namespace Canducci.Pagination.Mvc
 
         #region page_numbers
         internal static HtmlContentBuilder Numbers<T>(HtmlContentBuilder content, IPaginated<T> paginated, Func<int, string> generatePageUrl, PaginatedOptions options)
-        {   
+        {
+            if (options.MaximumPageNumbersToDisplay != 8)
+                paginated.SetPages(options.MaximumPageNumbersToDisplay);
             paginated
                 .Pages
                 .ToList()

@@ -32,6 +32,7 @@ namespace Canducci.Pagination.Mvc
     [HtmlTargetElement("pagination", Attributes = PaginationCssClassLiDisabled)]
     [HtmlTargetElement("pagination", Attributes = PaginationLabelFirst)]
     [HtmlTargetElement("pagination", Attributes = PaginationLabelLast)]
+    [HtmlTargetElement("pagination", Attributes = PaginationMaximumPageNumbersToDisplay)]
     public class PaginatedTagHelper: TagHelper
     {
         #region private asp_tag_name
@@ -63,6 +64,7 @@ namespace Canducci.Pagination.Mvc
         private const string PaginationCssClassAnchor = "pagination-css-class-anchor";
         private const string PaginationLabelFirst = "pagination-label-first";
         private const string PaginationLabelLast = "pagination-label-last";
+        private const string PaginationMaximumPageNumbersToDisplay = "pagination-maximum-page-number-display";
         #endregion
 
         #region pagination_propriety
@@ -98,6 +100,9 @@ namespace Canducci.Pagination.Mvc
 
         [HtmlAttributeName(PaginationLabelLast)]
         public string LabelLast { get; set; } = "Last";
+
+        [HtmlAttributeName(PaginationMaximumPageNumbersToDisplay)]
+        public int MaximumPageNumbersToDisplay { get; set; } = 8;
         #endregion
 
         #region private asp_propriety
@@ -366,6 +371,8 @@ namespace Canducci.Pagination.Mvc
         #region numbers
         private TagHelperOutput Numbers(TagHelperOutput output)
         {
+            if (MaximumPageNumbersToDisplay != 8)
+                Paginated.SetPages(MaximumPageNumbersToDisplay);
             Paginated
                 .Pages
                 .ToList()

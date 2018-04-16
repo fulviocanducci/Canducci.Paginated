@@ -12,5 +12,8 @@
         public string PreviousLabel { get; set; } = "Previous";
         public string NextLabel { get; set; } = "Next";
         public string LastLabel { get; set; } = "Last";
+
+        public int MaximumPageNumbersToDisplay { get; set; } = 8;
+
     }
 }

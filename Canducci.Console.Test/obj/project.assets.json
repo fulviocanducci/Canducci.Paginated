@@ -841,7 +841,7 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
       },
-      "Canducci.Pagination/1.0.3": {
+      "Canducci.Pagination/1.0.3.1": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "compile": {
@@ -3163,7 +3163,7 @@
         "system.threading.tasks.nuspec"
       ]
     },
-    "Canducci.Pagination/1.0.3": {
+    "Canducci.Pagination/1.0.3.1": {
       "type": "project",
       "path": "../Canducci.Pagination/Canducci.Pagination.csproj",
       "msbuildProject": "../Canducci.Pagination/Canducci.Pagination.csproj"
@@ -3171,7 +3171,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
-      "Canducci.Pagination >= 1.0.3",
+      "Canducci.Pagination >= 1.0.3.1",
       "Microsoft.EntityFrameworkCore.Sqlite >= 2.0.2",
       "Microsoft.NETCore.App >= 2.0.0"
     ]

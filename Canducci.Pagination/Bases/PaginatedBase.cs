@@ -14,7 +14,8 @@ namespace Canducci.Pagination.Bases
         public int FirstItemOnPage { get; protected set; }
         public int LastItemOnPage { get; protected set; }
         public SortedSet<int> Pages { get; protected set; }
-        public void SetPages(int count = 3)
+        public int MaximumPageNumbersToDisplay { get; } = 8;
+        public void SetPages(int count = 8)
         {
             if (Pages == null)
             {
@@ -31,7 +32,8 @@ namespace Canducci.Pagination.Bases
             {
                 throw new System.RankException("The count value has to be greater than 0 ideal is the number 3 or higher");
             }
-            int interaction = count;
+            int maximumPageNumbersToDisplay = (count / 2);
+            int interaction = maximumPageNumbersToDisplay;
             int pageNumber = PageNumber;
             while (interaction >= 0 && pageNumber > 0)
             {
@@ -40,11 +42,11 @@ namespace Canducci.Pagination.Bases
             }
             interaction = 0;
             pageNumber = PageNumber;
-            while (interaction < count && pageNumber < PageCount)
+            while (interaction < maximumPageNumbersToDisplay && pageNumber < PageCount)
             {
                 Pages.Add(++pageNumber);
                 interaction++;
-            }
+            }            
         }
 
         internal PaginatedBase() { }

@@ -1,6 +1,11 @@
 ﻿@model Canducci.Pagination.Paginated<People>
 @{
     ViewData["Title"] = "Home Page";
+    var n = new PaginatedOptions()
+    {
+        
+    };
+
 }
 
 <br /><br /><br />
@@ -9,7 +14,7 @@
 {
     <div>@item.Id - @item.Name</div>
 }
-<div>
+@*<div>
     @Html.Pagination(Model, current => Url.Action("Index", new { current }), PaginatedStyle.PreviousNext, new PaginatedOptions { NextLabel = "Próximo", PreviousLabel = "Anterior", FirstLabel = "Primeiro", LastLabel = "Último" })
 </div>
 <div>
@@ -22,12 +27,12 @@
     @Html.Pagination(Model, current => Url.Action("Index", new { current }), PaginatedStyle.NumbersWithPreviousNext, new PaginatedOptions { NextLabel = "Próximo", PreviousLabel = "Anterior", FirstLabel = "Primeiro", LastLabel = "Último" })
 </div>
 <div>
-    @Html.Pagination(Model, current => Url.Action("Index", new { current }), PaginatedStyle.NumbersWithFirstPreviousNextLast, new PaginatedOptions { NextLabel = "Próximo", PreviousLabel = "Anterior", FirstLabel = "Primeiro", LastLabel = "Último" })
-</div>
+    @Html.Pagination(Model, current => Url.Action("Index", new { current }), PaginatedStyle.NumbersWithFirstPreviousNextLast, new PaginatedOptions { NextLabel = "Próximo", PreviousLabel = "Anterior", FirstLabel = "Primeiro", LastLabel = "Último", MaximumPageNumbersToDisplay = 4 })
+</div>*@
 
 <h3>TagHelper</h3>
 
-<div>    
+@*<div>    
     <pagination pagination-asp-action="Index"
                 pagination-asp-controller="Home"                                
                 pagination-style="PreviousNext"
@@ -36,7 +41,7 @@
                 pagination-label-next="Próximo"
                 pagination-label-previous="Anterior"
                 pagination-css-class-anchor="page-link"
-                pagination-css-class-li="page-item"
+                pagination-css-class-li="page-item"                
                 pagination-css-class-li-disabled="disabled">
     </pagination>
 </div>
@@ -88,7 +93,7 @@
                 pagination-css-class-li="page-item"
                 pagination-css-class-li-disabled="disabled">
     </pagination>
-</div>
+</div>*@
 
 <div>
     <pagination pagination-asp-action="Index"
@@ -97,17 +102,18 @@
                 pagination-css-class-li-active="active"
                 pagination-css-class-ul="pagination"
                 pagination-paginated="Model"
-                pagination-label-next="Próximo"
-                pagination-label-previous="Anterior"
-                pagination-label-first="Primeiro"
-                pagination-label-last="Último"
+                pagination-label-next="»"
+                pagination-label-previous="«"
+                pagination-label-first="««"
+                pagination-label-last="»»"
                 pagination-css-class-anchor="page-link"
                 pagination-css-class-li="page-item"
+                pagination-maximum-page-number-display="4"
                 pagination-css-class-li-disabled="disabled">
     </pagination>
 </div>
 
-<div>
+@*<div>
     <pagination pagination-asp-action="Index"
                 pagination-asp-controller="Home"
                 pagination-style="NumbersWithFirstPreviousNextLast"                
@@ -115,4 +121,4 @@
                 pagination-label-next="Próximo"
                 pagination-label-previous="Anterior">
     </pagination>
-</div>
+</div>*@

@@ -15,7 +15,8 @@ namespace Canducci.Pagination
             bool isLastPage,
             int firstItemOnPage,
             int lastItemOnPage,
-            SortedSet<int> pages)
+            SortedSet<int> pages,
+            int maximumPageNumbersToDisplay)
         {
             PageCount = pageCount;
             TotalItemCount = totalItemCount;
@@ -28,6 +29,7 @@ namespace Canducci.Pagination
             FirstItemOnPage = firstItemOnPage;
             LastItemOnPage = lastItemOnPage;
             Pages = pages;
+            MaximumPageNumbersToDisplay = maximumPageNumbersToDisplay;
         }
         public int PageCount { get; }
         public int TotalItemCount { get; }
@@ -40,5 +42,6 @@ namespace Canducci.Pagination
         public int FirstItemOnPage { get; }
         public int LastItemOnPage { get; }
         public SortedSet<int> Pages { get; }
+        public int MaximumPageNumbersToDisplay { get; }
     }
 }
