@@ -26,7 +26,7 @@ namespace Canducci.Pagination
             int numberOfLastItemOnPage = FirstItemOnPage + PageSize - 1;
             LastItemOnPage = numberOfLastItemOnPage > TotalItemCount ? TotalItemCount : numberOfLastItemOnPage;
             
-            if (superSet != null && TotalItemCount > 0)
+            if (superSet != null && TotalItemCount > 0) 
                 AddRange(pageNumber == 1
                     ? superSet.Skip(0).Take(pageSize).ToList()
                     : superSet.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList()
@@ -35,9 +35,13 @@ namespace Canducci.Pagination
         }
 
         public Paginated(IEnumerable<T> superSet, int pageNumber, int pageSize)
-            : this(superSet.AsQueryable(), pageNumber, pageSize)
-        {
-        }
+            : this(superSet.AsQueryable(), pageNumber, pageSize) { }
+
+        //public static Paginated<T> Create(IEnumerable<T> superSet, int pageNumber, int pageSize)
+        //    => new Paginated<T>(superSet, pageNumber, pageSize);
+
+        //public static Paginated<T> Create(IQueryable<T> superSet, int pageNumber, int pageSize) 
+        //    => new Paginated<T>(superSet, pageNumber, pageSize);
 
         public void Dispose()
         {

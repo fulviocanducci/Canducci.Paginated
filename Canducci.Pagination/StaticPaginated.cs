@@ -26,7 +26,10 @@ namespace Canducci.Pagination
             int numberOfLastItemOnPage = FirstItemOnPage + PageSize - 1;
             LastItemOnPage = numberOfLastItemOnPage > TotalItemCount ? TotalItemCount : numberOfLastItemOnPage;
             SetPages();
-        } 
+        }
+
+        //public static StaticPaginated<T> Create(IEnumerable<T> subSet, int pageNumber, int pageSize, int totalItemCount) 
+        //    => new StaticPaginated<T>(subSet, pageNumber, pageSize, totalItemCount);
 
         public void Dispose()
         {

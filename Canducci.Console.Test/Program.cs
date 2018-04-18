@@ -1,24 +1,26 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Canducci.Pagination;
+using Canducci.Pagination.Interfaces;
+using Microsoft.EntityFrameworkCore;
+
 namespace Canducci.Console.Test
 {
     class Program
     {
         static void Main(string[] args)
-        {
-           
+        {           
             int page = 1; 
             int total = 2;            
             TestIQueryablePaginated(page, total);
             TestIEnumerableStaticPaginated(page, total);
-
         }
 
         static void TestIQueryablePaginated(int page, int total = 5)
         {
             using (DatabaseContext db = new DatabaseContext())
-            {
+            {                
                 var count = db.People.Count();
                 Paginated<People> listOfQueryable0 = db.People
                     .OrderBy(x => x.Name)
