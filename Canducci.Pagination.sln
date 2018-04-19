@@ -18,7 +18,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Canducci.WebApp.Test", "Can
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Canducci.Pagination.Mvc", "Canducci.Pagination.Mvc\Canducci.Pagination.Mvc.csproj", "{43DF26DE-63DC-4394-A949-1A33C0126756}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Canducci.WebAppRazorPages.Test", "Canducci.WebAppRazorPages.Test\Canducci.WebAppRazorPages.Test.csproj", "{B1534BA4-1613-4518-B48B-3F847893B5A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Canducci.WebAppRazorPages.Test", "Canducci.WebAppRazorPages.Test\Canducci.WebAppRazorPages.Test.csproj", "{B1534BA4-1613-4518-B48B-3F847893B5A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestCanducciPaginationTest", "UnitTestCanducciPaginationTest\UnitTestCanducciPaginationTest.csproj", "{A7F7F6E4-3418-4D55-A302-4135417DD409}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,6 +48,10 @@ Global
 		{B1534BA4-1613-4518-B48B-3F847893B5A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1534BA4-1613-4518-B48B-3F847893B5A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1534BA4-1613-4518-B48B-3F847893B5A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7F7F6E4-3418-4D55-A302-4135417DD409}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7F7F6E4-3418-4D55-A302-4135417DD409}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7F7F6E4-3418-4D55-A302-4135417DD409}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7F7F6E4-3418-4D55-A302-4135417DD409}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
