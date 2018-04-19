@@ -90,16 +90,16 @@ namespace Canducci.Pagination.Mvc
         public IPaginated Paginated { get; set; }
 
         [HtmlAttributeName(PaginationLabelNext)]
-        public string LabelNext { get; set; } = "Next";
+        public string LabelNext { get; set; } = "»";
 
         [HtmlAttributeName(PaginationLabelPrevious)]
-        public string LabelPrevious { get; set; } = "Previous";
+        public string LabelPrevious { get; set; } = "«";
 
         [HtmlAttributeName(PaginationLabelFirst)]
-        public string LabelFirst { get; set; } = "First";
+        public string LabelFirst { get; set; } = "««";
 
         [HtmlAttributeName(PaginationLabelLast)]
-        public string LabelLast { get; set; } = "Last";
+        public string LabelLast { get; set; } = "»»";
 
         [HtmlAttributeName(PaginationMaximumPageNumbersToDisplay)]
         public int MaximumPageNumbersToDisplay { get; set; } = 8;
@@ -166,7 +166,11 @@ namespace Canducci.Pagination.Mvc
         
         protected TagBuilder CreateTagBuilder(TagHelperOutput output, int page, string linkText, string cssClass = null)
         {  
-            
+            if (Paginated == null)
+            {
+                throw new NullReferenceException("Class Paginated or StaticPaginated is null reference, tag was missing: pagination-paginated");
+            }
+
             if (output.Attributes.ContainsName(Href))
             {
                 if (Action != null ||

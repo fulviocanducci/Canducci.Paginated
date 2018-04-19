@@ -58,8 +58,7 @@ namespace Canducci.Pagination.Mvc
         }
 
         internal static HtmlContentBuilder CreateHtmlContentBuilder(PaginatedOptions options)
-        {
-            if (options == null) new PaginatedOptions();
+        {            
             HtmlContentBuilder content = new HtmlContentBuilder();
             content.AppendHtml($"<ul class=\"{options.CssClassUl}\">");
             content.AppendHtmlLine(Environment.NewLine);
@@ -97,7 +96,8 @@ namespace Canducci.Pagination.Mvc
 
         #region page_numbers_with_first_previous_next_last
         internal static IHtmlContent PaginationNumbersWithFirstPreviousNextLast<T>(IPaginated<T> paginated, Func<int, string> generatePageUrl, PaginatedOptions options = null)
-        {            
+        {
+            if (options == null) options = new PaginatedOptions();
             HtmlContentBuilder content = CreateHtmlContentBuilder(options);
             First(content, paginated, generatePageUrl, options);
             Previous(content, paginated, generatePageUrl, options);
@@ -111,7 +111,8 @@ namespace Canducci.Pagination.Mvc
 
         #region page_numbers_with_previous_next
         internal static IHtmlContent PaginationNumbersWithPreviousNext<T>(IPaginated<T> paginated, Func<int, string> generatePageUrl, PaginatedOptions options = null)
-        {            
+        {
+            if (options == null) options = new PaginatedOptions();
             HtmlContentBuilder content = CreateHtmlContentBuilder(options);
             Previous(content, paginated, generatePageUrl, options);
             Numbers(content, paginated, generatePageUrl, options);
@@ -123,7 +124,8 @@ namespace Canducci.Pagination.Mvc
 
         #region page_first_previous_next_last
         internal static IHtmlContent PaginationFirstPreviousNextLast<T>(IPaginated<T> paginated, Func<int, string> generatePageUrl, PaginatedOptions options = null)
-        {            
+        {
+            if (options == null) options = new PaginatedOptions();
             HtmlContentBuilder content = CreateHtmlContentBuilder(options);
             First(content, paginated, generatePageUrl, options);
             Previous(content, paginated, generatePageUrl, options);
@@ -136,7 +138,8 @@ namespace Canducci.Pagination.Mvc
 
         #region page_previous_next
         internal static IHtmlContent PaginationPreviousNext<T>(IPaginated<T> paginated, Func<int, string> generatePageUrl, PaginatedOptions options = null)
-        {            
+        {
+            if (options == null) options = new PaginatedOptions();
             HtmlContentBuilder content = CreateHtmlContentBuilder(options);
             Previous(content, paginated, generatePageUrl, options);
             Next(content, paginated, generatePageUrl, options);
@@ -164,7 +167,8 @@ namespace Canducci.Pagination.Mvc
         }
 
         internal static IHtmlContent PaginationNumbers<T>(IPaginated<T> paginated, Func<int, string> generatePageUrl, PaginatedOptions options = null)
-        {            
+        {
+            if (options == null) options = new PaginatedOptions();
             HtmlContentBuilder content = CreateHtmlContentBuilder(options);
             Numbers(content, paginated, generatePageUrl, options);
             content.AppendHtml("</ul>");
@@ -172,7 +176,8 @@ namespace Canducci.Pagination.Mvc
         }
         #endregion
 
-        public static IHtmlContent Pagination<T>(this IHtmlHelper htmlHelper, IPaginated<T> paginated, Func<int, string> generatePageUrl, PaginatedStyle paginatedStyle = PaginatedStyle.NumbersWithFirstPreviousNextLast, PaginatedOptions options = null)
+        #region Pagination_Web_Page
+        public static IHtmlContent Pagination<T>(this IHtmlHelper htmlHelper, IPaginated<T> paginated, Func<int, string> generatePageUrl, PaginatedStyle paginatedStyle = PaginatedStyle.NumbersWithFirstPreviousNextLast, PaginatedOptions options = default(PaginatedOptions))
         {
             IHtmlContent content = null;
             switch (paginatedStyle) 
@@ -205,5 +210,6 @@ namespace Canducci.Pagination.Mvc
             }
             return content;
         }
+        #endregion
     }
 }

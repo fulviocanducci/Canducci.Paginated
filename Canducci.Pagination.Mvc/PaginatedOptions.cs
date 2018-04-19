@@ -8,10 +8,10 @@
         public string CssClassLiActive { get; set; } = "active";
         public string CssClassAnchor { get; set; } = "page-link";
 
-        public string FirstLabel { get; set; } = "First";
-        public string PreviousLabel { get; set; } = "Previous";
-        public string NextLabel { get; set; } = "Next";
-        public string LastLabel { get; set; } = "Last";
+        public string FirstLabel { get; set; } = "««";
+        public string PreviousLabel { get; set; } = "«";
+        public string NextLabel { get; set; } = "»";
+        public string LastLabel { get; set; } = "»»";
 
         public int MaximumPageNumbersToDisplay { get; set; } = 8;
 
