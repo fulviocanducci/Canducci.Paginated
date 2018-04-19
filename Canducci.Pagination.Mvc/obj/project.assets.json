@@ -23711,7 +23711,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "1.0.3.1",
+    "version": "1.0.3.2",
     "restore": {
       "projectUniqueName": "C:\\Users\\Developer\\documents\\visual studio 2017\\Projects\\Canducci.Pagination\\Canducci.Pagination.Mvc\\Canducci.Pagination.Mvc.csproj",
       "projectName": "Canducci.Pagination.Mvc",
