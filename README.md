@@ -142,31 +142,77 @@ Open the file `_ViewImports.cshtml` and add this line  `@addTagHelper *, Canducc
 - ***View - Index.cshtml***
 ```csharp
 @model Canducci.Pagination.Paginated<People>
-@{
-    ViewData["Title"] = "Home Page";
-    var options = new PaginatedOptions { NextLabel = "Próximo", PreviousLabel = "Anterior", FirstLabel = "Primeiro", LastLabel = "Último" };
-}
+@{ ViewData["Title"] = "Home Page"; }
 
-<br /><br /><br />
 
 @foreach (var item in Model)
 {
     <div>@item.Id - @item.Name</div>
 }
 <div>
-    @Html.Pagination(Model, current => Url.Action("Index", new { current }), PaginatedStyle.PreviousNext, options)
+    @Html.Pagination(
+                    Model, 
+                    current => Url.Action("Index", new { current }), 
+                    PaginatedStyle.PreviousNext, 
+                    new PaginatedOptions { 
+                                          NextLabel = "Próximo", 
+                                          PreviousLabel = "Anterior", 
+                                          FirstLabel = "Primeiro", 
+                                          LastLabel = "Último" 
+                                         }
+    )
 </div>
 <div>
-    @Html.Pagination(Model, current => Url.Action("Index", new { current }), PaginatedStyle.FirstPreviousNextLast, options)
+    @Html.Pagination(
+                    Model, 
+                    current => Url.Action("Index", new { current }), 
+                    PaginatedStyle.FirstPreviousNextLast, 
+                    new PaginatedOptions { 
+                                          NextLabel = "Próximo", 
+                                          PreviousLabel = "Anterior", 
+                                          FirstLabel = "Primeiro", 
+                                          LastLabel = "Último" 
+                                          }
+    )
 </div>
 <div>
-    @Html.Pagination(Model, current => Url.Action("Index", new { current }), PaginatedStyle.Numbers, options)
+    @Html.Pagination(
+                    Model, 
+                    current => Url.Action("Index", new { current }), 
+                    PaginatedStyle.Numbers, 
+                    new PaginatedOptions { 
+                                          NextLabel = "Próximo", 
+                                          PreviousLabel = "Anterior", 
+                                          FirstLabel = "Primeiro", 
+                                          LastLabel = "Último" 
+                                         }
+     )
 </div>
 <div>
-    @Html.Pagination(Model, current => Url.Action("Index", new { current}), PaginatedStyle.NumbersWithPreviousNext, options)
+    @Html.Pagination(
+                    Model, 
+                    current => Url.Action("Index", new { current}), 
+                    PaginatedStyle.NumbersWithPreviousNext, 
+                    new PaginatedOptions { 
+                                                      NextLabel = "Próximo", 
+                                                      PreviousLabel = "Anterior", 
+                                                      FirstLabel = "Primeiro", 
+                                                      LastLabel = "Último" 
+                                 }
+    )
 </div>
 <div>
-    @Html.Pagination(Model, current => Url.Action("Index", new { current }), PaginatedStyle.NumbersWithFirstPreviousNextLast, options)
+    @Html.Pagination(
+                    Model, 
+                    current => Url.Action("Index", new { current }),
+                    PaginatedStyle.NumbersWithFirstPreviousNextLast, 
+                    new PaginatedOptions { 
+                                                      NextLabel = "Próximo", 
+                                                      PreviousLabel = "Anterior", 
+                                                      FirstLabel = "Primeiro", 
+                                                      LastLabel = "Último" 
+                                 }
+    )
 </div>
 
 <h3>TagHelper</h3>
@@ -338,7 +384,17 @@ namespace Canducci.WebAppRazorPages.Test.Pages
         </tr>
         <tr>
             <td colspan="2" class="text-center">
-                @Html.Pagination(Model.Items, current => Url.Page("Peoples", new { current }), PaginatedStyle.NumbersWithFirstPreviousNextLast, new PaginatedOptions { NextLabel = "Próximo", PreviousLabel = "Anterior", FirstLabel = "Primeiro", LastLabel = "Último" })
+                @Html.Pagination(
+                                 Model.Items, 
+                                 current => Url.Page("Peoples", new { current }), 
+                                 PaginatedStyle.NumbersWithFirstPreviousNextLast, 
+                                 new PaginatedOptions { 
+                                                      NextLabel = "Próximo", 
+                                                      PreviousLabel = "Anterior", 
+                                                      FirstLabel = "Primeiro", 
+                                                      LastLabel = "Último" 
+                                 }
+                )
             </td>
         </tr>
     </tfoot>
@@ -348,4 +404,5 @@ namespace Canducci.WebAppRazorPages.Test.Pages
 
 # Example Pagination
 
-[![Pagination-Example](http://i1308.photobucket.com/albums/s610/maryjanexique/savebootstrap_zpsg3jix7e8.png)](http://i1308.photobucket.com/albums/s610/maryjanexique/savebootstrap_zpsg3jix7e8.png)
+[![Pagination-Example](http://i1194.photobucket.com/albums/aa377/netdragoon1/layout_paginated_zpsfn6tngrw.png)
+           

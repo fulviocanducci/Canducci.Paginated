@@ -51,12 +51,21 @@
         </tr>
         <tr>
             <td colspan="2" class="text-center">
-                @Html.Pagination(Model.Items, current => Url.Page("Peoples", new { current }), PaginatedStyle.NumbersWithFirstPreviousNextLast, new PaginatedOptions { NextLabel = "Próximo", PreviousLabel = "Anterior", FirstLabel = "Primeiro", LastLabel = "Último" })                
+                @Html.Pagination(Model.Items,
+                    current => Url.Page("Peoples", new { current }),
+                    PaginatedStyle.NumbersWithFirstPreviousNextLast,
+                    new PaginatedOptions {
+                        NextLabel = "Próximo",
+                        PreviousLabel = "Anterior",
+                        FirstLabel = "Primeiro",
+                        LastLabel = "Último"
+                    })                
             </td>
         </tr>
         <tr>
             <td colspan="2" class="text-center">
-                @Html.Pagination(Model.Items, current => Url.Page("Peoples", new { current }))
+                @Html.Pagination(Model.Items, 
+                    current => Url.Page("Peoples", new { current }))
             </td>
         </tr>
     </tfoot>

@@ -14,21 +14,60 @@
 {
     <div>@item.Id - @item.Name</div>
 }
+
+<h3>Mode Default</h3>
 <div>
-    @Html.Pagination(Model, current => Url.Action("Index", new { current }), PaginatedStyle.PreviousNext, new PaginatedOptions { NextLabel = "Próximo", PreviousLabel = "Anterior", FirstLabel = "Primeiro", LastLabel = "Último" })
-</div>@*
-    <div>
-        @Html.Pagination(Model, current => Url.Action("Index", new { current }), PaginatedStyle.FirstPreviousNextLast, new PaginatedOptions { NextLabel = "Próximo", PreviousLabel = "Anterior", FirstLabel = "Primeiro", LastLabel = "Último" })
-    </div>
-    <div>
-        @Html.Pagination(Model, current => Url.Action("Index", new { current }), PaginatedStyle.Numbers, new PaginatedOptions { NextLabel = "Próximo", PreviousLabel = "Anterior", FirstLabel = "Primeiro", LastLabel = "Último" })
-    </div>
-    <div>
-        @Html.Pagination(Model, current => Url.Action("Index", new { current }), PaginatedStyle.NumbersWithPreviousNext, new PaginatedOptions { NextLabel = "Próximo", PreviousLabel = "Anterior", FirstLabel = "Primeiro", LastLabel = "Último" })
-    </div>
-    <div>
-        @Html.Pagination(Model, current => Url.Action("Index", new { current }), PaginatedStyle.NumbersWithFirstPreviousNextLast, new PaginatedOptions { NextLabel = "Próximo", PreviousLabel = "Anterior", FirstLabel = "Primeiro", LastLabel = "Último", MaximumPageNumbersToDisplay = 4 })
-    </div>*@
+    @Html.Pagination(Model, current => Url.Action("Index", new { current }))
+</div>
+<hr />
+<h3>Mode PreviousNext</h3>
+<div>
+    @Html.Pagination(Model, current => Url.Action("Index", new { current }),
+    PaginatedStyle.PreviousNext,
+    new PaginatedOptions {
+        NextLabel = "Próximo",
+        PreviousLabel = "Anterior"})
+</div>
+<hr />
+<h3>Mode FirstPreviousNextLast</h3>
+<div>
+    @Html.Pagination(Model, current => Url.Action("Index", new { current }),
+    PaginatedStyle.FirstPreviousNextLast,
+    new PaginatedOptions {
+        NextLabel = "Próximo",
+        PreviousLabel = "Anterior",
+        FirstLabel = "Primeiro",
+        LastLabel = "Último" })
+</div>
+<hr />
+<h3>Mode Numbers</h3>
+<div>
+    @Html.Pagination(Model, current => Url.Action("Index", new { current }), PaginatedStyle.Numbers)
+</div>
+<hr />
+<h3>Mode NumbersWithPreviousNext</h3>
+<div>
+    @Html.Pagination(Model, current => Url.Action("Index", new { current }),
+    PaginatedStyle.NumbersWithPreviousNext,
+    new PaginatedOptions {
+        NextLabel = "Próximo",
+        PreviousLabel = "Anterior",
+        FirstLabel = "Primeiro",
+        LastLabel = "Último" })
+</div>
+<hr />
+<h3>Mode NumbersWithFirstPreviousNextLast</h3>
+<div>
+    @Html.Pagination(Model, current => Url.Action("Index", new { current }),
+    PaginatedStyle.NumbersWithFirstPreviousNextLast,
+    new PaginatedOptions {
+        NextLabel = "Próximo",
+        PreviousLabel = "Anterior",
+        FirstLabel = "Primeiro",
+        LastLabel = "Último",
+        MaximumPageNumbersToDisplay = 4 })
+</div>
+
 
 <h3>TagHelper</h3>
 
