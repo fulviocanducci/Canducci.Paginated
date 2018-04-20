@@ -155,10 +155,10 @@ Open the file `_ViewImports.cshtml` and add this line  `@addTagHelper *, Canducc
                     current => Url.Action("Index", new { current }), 
                     PaginatedStyle.PreviousNext, 
                     new PaginatedOptions { 
-                                          NextLabel = "Próximo", 
-                                          PreviousLabel = "Anterior", 
-                                          FirstLabel = "Primeiro", 
-                                          LastLabel = "Último" 
+                                          NextLabel = "Next", 
+                                          PreviousLabel = "Previous", 
+                                          FirstLabel = "First", 
+                                          LastLabel = "Last" 
                                          }
     )
 </div>
@@ -168,10 +168,10 @@ Open the file `_ViewImports.cshtml` and add this line  `@addTagHelper *, Canducc
                     current => Url.Action("Index", new { current }), 
                     PaginatedStyle.FirstPreviousNextLast, 
                     new PaginatedOptions { 
-                                          NextLabel = "Próximo", 
-                                          PreviousLabel = "Anterior", 
-                                          FirstLabel = "Primeiro", 
-                                          LastLabel = "Último" 
+                                          NextLabel = "Next", 
+                                          PreviousLabel = "Previous", 
+                                          FirstLabel = "First", 
+                                          LastLabel = "Last" 
                                           }
     )
 </div>
@@ -181,10 +181,10 @@ Open the file `_ViewImports.cshtml` and add this line  `@addTagHelper *, Canducc
                     current => Url.Action("Index", new { current }), 
                     PaginatedStyle.Numbers, 
                     new PaginatedOptions { 
-                                          NextLabel = "Próximo", 
-                                          PreviousLabel = "Anterior", 
-                                          FirstLabel = "Primeiro", 
-                                          LastLabel = "Último" 
+                                          NextLabel = "Next", 
+                                          PreviousLabel = "Previous", 
+                                          FirstLabel = "First", 
+                                          LastLabel = "Last" 
                                          }
      )
 </div>
@@ -194,11 +194,11 @@ Open the file `_ViewImports.cshtml` and add this line  `@addTagHelper *, Canducc
                     current => Url.Action("Index", new { current}), 
                     PaginatedStyle.NumbersWithPreviousNext, 
                     new PaginatedOptions { 
-                                                      NextLabel = "Próximo", 
-                                                      PreviousLabel = "Anterior", 
-                                                      FirstLabel = "Primeiro", 
-                                                      LastLabel = "Último" 
-                                 }
+                                          NextLabel = "Next", 
+                                          PreviousLabel = "Previous", 
+                                          FirstLabel = "First", 
+                                          LastLabel = "Last" 
+                                         }
     )
 </div>
 <div>
@@ -207,11 +207,11 @@ Open the file `_ViewImports.cshtml` and add this line  `@addTagHelper *, Canducc
                     current => Url.Action("Index", new { current }),
                     PaginatedStyle.NumbersWithFirstPreviousNextLast, 
                     new PaginatedOptions { 
-                                                      NextLabel = "Próximo", 
-                                                      PreviousLabel = "Anterior", 
-                                                      FirstLabel = "Primeiro", 
-                                                      LastLabel = "Último" 
-                                 }
+                                          NextLabel = "Next", 
+                                          PreviousLabel = "Previous", 
+                                          FirstLabel = "First", 
+                                          LastLabel = "Last" 
+                                         }
     )
 </div>
 
@@ -223,8 +223,8 @@ Open the file `_ViewImports.cshtml` and add this line  `@addTagHelper *, Canducc
                 pagination-style="PreviousNext"
                 pagination-css-class-ul="pagination"
                 pagination-paginated="Model"
-                pagination-label-next="Próximo"
-                pagination-label-previous="Anterior"
+                pagination-label-next="Next"
+                pagination-label-previous="Previous"
                 pagination-css-class-anchor="page-link"
                 pagination-css-class-li="page-item"
                 pagination-css-class-li-disabled="disabled">
@@ -236,10 +236,10 @@ Open the file `_ViewImports.cshtml` and add this line  `@addTagHelper *, Canducc
                 pagination-style="FirstPreviousNextLast"
                 pagination-css-class-ul="pagination"
                 pagination-paginated="Model"
-                pagination-label-next="Próximo"
-                pagination-label-previous="Anterior"
-                pagination-label-first="Primeiro"
-                pagination-label-last="Último"
+                pagination-label-next="Next"
+                pagination-label-previous="Previous"
+                pagination-label-first="First"
+                pagination-label-last="Last"
                 pagination-css-class-anchor="page-link"
                 pagination-css-class-li="page-item"
                 pagination-css-class-li-disabled="disabled">
@@ -253,10 +253,10 @@ Open the file `_ViewImports.cshtml` and add this line  `@addTagHelper *, Canducc
                 pagination-css-class-li-active="active"
                 pagination-css-class-ul="pagination"
                 pagination-paginated="Model"
-                pagination-label-next="Próximo"
-                pagination-label-previous="Anterior"
-                pagination-label-first="Primeiro"
-                pagination-label-last="Último"
+                pagination-label-next="Next"
+                pagination-label-previous="Previous"
+                pagination-label-first="First"
+                pagination-label-last="Last"
                 pagination-css-class-anchor="page-link"
                 pagination-css-class-li="page-item"
                 pagination-css-class-li-disabled="disabled">
@@ -270,10 +270,10 @@ Open the file `_ViewImports.cshtml` and add this line  `@addTagHelper *, Canducc
                 pagination-css-class-li-active="active"
                 pagination-css-class-ul="pagination"
                 pagination-paginated="Model"
-                pagination-label-next="Próximo"
-                pagination-label-previous="Anterior"
-                pagination-label-first="Primeiro"
-                pagination-label-last="Último"
+                pagination-label-next="Next"
+                pagination-label-previous="Previous"
+                pagination-label-first="First"
+                pagination-label-last="Last"
                 pagination-css-class-anchor="page-link"
                 pagination-css-class-li="page-item"
                 pagination-css-class-li-disabled="disabled">
@@ -287,10 +287,10 @@ Open the file `_ViewImports.cshtml` and add this line  `@addTagHelper *, Canducc
                 pagination-css-class-li-active="active"
                 pagination-css-class-ul="pagination"
                 pagination-paginated="Model"
-                pagination-label-next="Próximo"
-                pagination-label-previous="Anterior"
-                pagination-label-first="Primeiro"
-                pagination-label-last="Último"
+                pagination-label-next="Next"
+                pagination-label-previous="Previous"
+                pagination-label-first="First"
+                pagination-label-last="Last"
                 pagination-css-class-anchor="page-link"
                 pagination-css-class-li="page-item"
                 pagination-css-class-li-disabled="disabled">
@@ -302,8 +302,8 @@ Open the file `_ViewImports.cshtml` and add this line  `@addTagHelper *, Canducc
                 pagination-asp-controller="Home"
                 pagination-style="NumbersWithFirstPreviousNextLast"                
                 pagination-paginated="Model"
-                pagination-label-next="Próximo"
-                pagination-label-previous="Anterior">
+                pagination-label-next="Next"
+                pagination-label-previous="Previous">
     </pagination>
 </div>
 ```
@@ -372,10 +372,10 @@ namespace Canducci.WebAppRazorPages.Test.Pages
                             pagination-css-class-li-active="active"
                             pagination-css-class-ul="pagination"
                             pagination-paginated="Model.Items"
-                            pagination-label-next="Próximo"
-                            pagination-label-previous="Anterior"
-                            pagination-label-first="Primeiro"
-                            pagination-label-last="Último"
+                            pagination-label-next="Next"
+                            pagination-label-previous="Previous"
+                            pagination-label-first="First"
+                            pagination-label-last="Last"
                             pagination-css-class-anchor="page-link"
                             pagination-css-class-li="page-item"
                             pagination-css-class-li-disabled="disabled">
@@ -389,11 +389,11 @@ namespace Canducci.WebAppRazorPages.Test.Pages
                                  current => Url.Page("Peoples", new { current }), 
                                  PaginatedStyle.NumbersWithFirstPreviousNextLast, 
                                  new PaginatedOptions { 
-                                                      NextLabel = "Próximo", 
-                                                      PreviousLabel = "Anterior", 
-                                                      FirstLabel = "Primeiro", 
-                                                      LastLabel = "Último" 
-                                 }
+                                                      NextLabel = "Next", 
+                                                      PreviousLabel = "Previous", 
+                                                      FirstLabel = "First", 
+                                                      LastLabel = "Last" 
+                                                      }
                 )
             </td>
         </tr>
