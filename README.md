@@ -404,6 +404,4 @@ namespace Canducci.WebAppRazorPages.Test.Pages
 
 # Example Pagination
 
-[![Pagination-Example](http://i1194.photobucket.com/albums/aa377/netdragoon1/layout_paginated_zpsfn6tngrw.png | width=100)](https://www.nuget.org/packages/Canducci.Pagination/)
-
-![](https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png | width=100)
+[![Pagination-Example](http://i1194.photobucket.com/albums/aa377/netdragoon1/layout_paginated_zps7xd7fr9c.jpg)](https://www.nuget.org/packages/Canducci.Pagination/)
