@@ -221,10 +221,10 @@ namespace Canducci.Pagination.Mvc
          }
 
          TagBuilder tagBuilder;
-
-#if NETSTANDARD2_0
+         
+//#if NETSTANDARD2_0 || NETSTANDARD2_1
             if (pageLink)
-            {
+            { 
                 tagBuilder = Generator.GeneratePageLink(
                     ViewContext,
                     linkText: linkText,
@@ -236,7 +236,7 @@ namespace Canducci.Pagination.Mvc
                     routeValues: routeValues,
                     htmlAttributes: null);
             }
-#endif
+//#endif
          if (routeLink)
          {
             tagBuilder = Generator.GenerateRouteLink(
