@@ -405,4 +405,4 @@ namespace Canducci.WebAppRazorPages.Test.Pages
 
 # Example Pagination
 
-[![Pagination-Example](https://raw.githubusercontent.com/fulviocanducci/Canducci.Paginated/master/images/page-save-example.png)
+![Pagination-Example](https://raw.githubusercontent.com/fulviocanducci/Canducci.Paginated/master/images/page-save-example.png)
