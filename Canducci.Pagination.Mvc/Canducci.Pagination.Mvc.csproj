@@ -1,7 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   
   <PropertyGroup>
-    <TargetFrameworks>net451;net452;net46;net461;net462;net47;net471;net48;netstandard1.6;netstandard2.0;netstandard2.1;</TargetFrameworks>
+    <TargetFrameworks>net461;net462;net47;net48;netstandard2.0;netstandard2.1;netcoreapp2.0;netcoreapp2.1;netcoreapp2.2;netcoreapp3.0;netcoreapp3.1</TargetFrameworks>
     <Version>2.0.0.0</Version>
     <Authors>Canducci</Authors>
     <Company>Canducci</Company>
@@ -19,72 +19,22 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>ico.png</PackageIcon>
     <Copyright>Canducci</Copyright>
-  </PropertyGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.6' ">
-    <PackageReference Include="System.Linq.Queryable" Version="4.3.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc">
-      <Version>1.1.7</Version>
-    </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Canducci.Pagination" Version="1.0.3.1" />
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(TargetFramework)' == 'net451'">
-    <PackageReference Include="Microsoft.AspNetCore.Mvc">
-      <Version>1.1.7</Version>
-    </PackageReference>
-  </ItemGroup>
-  
-  <ItemGroup Condition="'$(TargetFramework)' == 'net452'">
-    <PackageReference Include="Microsoft.AspNetCore.Mvc">
-      <Version>1.1.7</Version>
-    </PackageReference>
-  </ItemGroup> 
-
-  <ItemGroup Condition="'$(TargetFramework)' == 'net46'">
-    <PackageReference Include="Microsoft.AspNetCore.Mvc">
-      <Version>1.1.7</Version>
-    </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(TargetFramework)' == 'net461'">
-    <PackageReference Include="Microsoft.AspNetCore.Mvc">
-      <Version>1.1.7</Version>
-    </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(TargetFramework)' == 'net462'">
-    <PackageReference Include="Microsoft.AspNetCore.Mvc">
-      <Version>1.1.7</Version>
-    </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(TargetFramework)' == 'net47'">
-    <PackageReference Include="Microsoft.AspNetCore.Mvc">
-      <Version>1.1.7</Version>
-    </PackageReference>
-  </ItemGroup>
-  
-  <ItemGroup Condition="'$(TargetFramework)' == 'net471'">
-    <PackageReference Include="Microsoft.AspNetCore.Mvc">
-      <Version>1.1.7</Version>
-    </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
-    <PackageReference Include="Microsoft.AspNetCore.Mvc">
-      <Version>2.0.3</Version>
-    </PackageReference>
-  </ItemGroup>
+  </PropertyGroup> 
 
   <ItemGroup>
     <None Include="..\images\ico.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+  </ItemGroup> 
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor" Version="2.2.0" />
+  </ItemGroup> 
+
+  <ItemGroup>
+    <ProjectReference Include="..\Canducci.Pagination\Canducci.Pagination.csproj" />
   </ItemGroup>
 
 </Project>
