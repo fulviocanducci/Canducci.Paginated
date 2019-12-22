@@ -1,24 +1,35 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>    
-    <TargetFrameworks>net451;net452;net46;net461;net462;net47;net471;netstandard1.6;netstandard2.0;</TargetFrameworks>    
+    <TargetFrameworks>net451;net452;net46;net461;net462;net47;net471;net48;netstandard1.6;netstandard2.0;netstandard2.1;</TargetFrameworks>    
     <PackageProjectUrl>https://github.com/fulviocanducci/Canducci.Paginated</PackageProjectUrl>    
     <RepositoryUrl>https://github.com/fulviocanducci/Canducci.Paginated</RepositoryUrl>    
     <RepositoryType>https://github.com/fulviocanducci/Canducci.Paginated</RepositoryType>    
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>    
     <PackageTags>Paginated</PackageTags>    
     <Description>Note: based on repository https://github.com/TroyGoode/PagedList</Description>    
-    <PackageReleaseNotes>Add method Pages, SetPageMaximumPageNumbersToDisplay</PackageReleaseNotes>    
-    <PackageIconUrl>https://wyysbq.by3301.livefilestore.com/y4puDpEUEx6J41XdlqswFDCQjiqVPIFIvPgKqU3xIkWRr4FVitd0-XBV3fDANZ_aKajy-fqU4cUWrq3-er8vBmHGQ7Wq-i-oCEGui9MIQNpjQWEyBXlukPw7ORXxucUy6CGSq5gVgfuRY2I2SdVze09iymr_gEFTarF2tHAV7M_h-Dl3n3AUJU9HzvJ0su1W2yCk9PvK3Hq-bHSZ6ydg5-lDA/paginated.png</PackageIconUrl>    
-    <Version>1.0.3.1</Version>    
+    <PackageReleaseNotes>Change Version &amp;&amp; Compatibily Version</PackageReleaseNotes>    
+    <PackageIconUrl></PackageIconUrl>    
+    <Version>2.0.0.0</Version>    
     <Authors>Canducci</Authors>    
     <Product>Canducci</Product>    
-    <AssemblyVersion>1.0.3.1</AssemblyVersion>    
-    <FileVersion>1.0.3.1</FileVersion>        
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>    
+    <FileVersion>2.0.0.0</FileVersion>    
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>    
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>    
+    <PackageIcon>ico.png</PackageIcon>    
+    <Copyright>Canducci</Copyright>        
   </PropertyGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.6' ">
     <PackageReference Include="System.Linq.Queryable" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\images\ico.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

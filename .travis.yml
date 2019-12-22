@@ -2,7 +2,6 @@ language: csharp
 mono: none
 dotnet: 2.0.0
 solution: Canducci.Pagination.sln
-install:
-  - dotnet restore Canducci.Console.Test/Canducci.Console.Test.csproj  
-script:
-  - dotnet build Canducci.Console.Test/Canducci.Console.Test.csproj
+script:    
+  - dotnet restore
+  - dotnet test -c Release -f netstandard2.0
