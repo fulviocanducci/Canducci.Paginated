@@ -1397,7 +1397,7 @@
           "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
         }
       },
-      "Canducci.Pagination/2.1.0": {
+      "Canducci.Pagination/2.1.1": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
         "compile": {
@@ -2795,7 +2795,7 @@
           "lib/netcoreapp2.1/_._": {}
         }
       },
-      "Canducci.Pagination/2.1.0": {
+      "Canducci.Pagination/2.1.1": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "compile": {
@@ -4193,7 +4193,7 @@
           "lib/netcoreapp2.1/_._": {}
         }
       },
-      "Canducci.Pagination/2.1.0": {
+      "Canducci.Pagination/2.1.1": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "compile": {
@@ -6126,7 +6126,7 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
-      "Canducci.Pagination/2.1.0": {
+      "Canducci.Pagination/2.1.1": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.0",
         "compile": {
@@ -8059,7 +8059,7 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
-      "Canducci.Pagination/2.1.0": {
+      "Canducci.Pagination/2.1.1": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "compile": {
@@ -8888,7 +8888,7 @@
           "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
         }
       },
-      "Canducci.Pagination/2.1.0": {
+      "Canducci.Pagination/2.1.1": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "compile": {
@@ -9717,7 +9717,7 @@
           "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
         }
       },
-      "Canducci.Pagination/2.1.0": {
+      "Canducci.Pagination/2.1.1": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.2",
         "compile": {
@@ -10546,7 +10546,7 @@
           "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
         }
       },
-      "Canducci.Pagination/2.1.0": {
+      "Canducci.Pagination/2.1.1": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "compile": {
@@ -11375,7 +11375,7 @@
           "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
         }
       },
-      "Canducci.Pagination/2.1.0": {
+      "Canducci.Pagination/2.1.1": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.8",
         "compile": {
@@ -12613,7 +12613,7 @@
           "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
         }
       },
-      "Canducci.Pagination/2.1.0": {
+      "Canducci.Pagination/2.1.1": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "compile": {
@@ -14564,7 +14564,7 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
-      "Canducci.Pagination/2.1.0": {
+      "Canducci.Pagination/2.1.1": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "compile": {
@@ -21985,7 +21985,7 @@
         "system.xml.xdocument.nuspec"
       ]
     },
-    "Canducci.Pagination/2.1.0": {
+    "Canducci.Pagination/2.1.1": {
       "type": "project",
       "path": "../Canducci.Pagination/Canducci.Pagination.csproj",
       "msbuildProject": "../Canducci.Pagination/Canducci.Pagination.csproj"
@@ -21993,61 +21993,61 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
-      "Canducci.Pagination >= 2.1.0",
+      "Canducci.Pagination >= 2.1.1",
       "Microsoft.AspNetCore.Mvc.ViewFeatures >= 2.2.0",
       "Microsoft.AspNetCore.Razor >= 2.2.0",
       "Microsoft.NETCore.App >= 2.0.0"
     ],
     ".NETCoreApp,Version=v2.1": [
-      "Canducci.Pagination >= 2.1.0",
+      "Canducci.Pagination >= 2.1.1",
       "Microsoft.AspNetCore.Mvc.ViewFeatures >= 2.2.0",
       "Microsoft.AspNetCore.Razor >= 2.2.0",
       "Microsoft.NETCore.App >= 2.1.0"
     ],
     ".NETCoreApp,Version=v2.2": [
-      "Canducci.Pagination >= 2.1.0",
+      "Canducci.Pagination >= 2.1.1",
       "Microsoft.AspNetCore.Mvc.ViewFeatures >= 2.2.0",
       "Microsoft.AspNetCore.Razor >= 2.2.0",
       "Microsoft.NETCore.App >= 2.2.0"
     ],
     ".NETCoreApp,Version=v3.0": [
-      "Canducci.Pagination >= 2.1.0",
+      "Canducci.Pagination >= 2.1.1",
       "Microsoft.AspNetCore.Mvc.ViewFeatures >= 2.2.0",
       "Microsoft.AspNetCore.Razor >= 2.2.0"
     ],
     ".NETCoreApp,Version=v3.1": [
-      "Canducci.Pagination >= 2.1.0",
+      "Canducci.Pagination >= 2.1.1",
       "Microsoft.AspNetCore.Mvc.ViewFeatures >= 2.2.0",
       "Microsoft.AspNetCore.Razor >= 2.2.0"
     ],
     ".NETFramework,Version=v4.6.1": [
-      "Canducci.Pagination >= 2.1.0",
+      "Canducci.Pagination >= 2.1.1",
       "Microsoft.AspNetCore.Mvc.ViewFeatures >= 2.2.0",
       "Microsoft.AspNetCore.Razor >= 2.2.0"
     ],
     ".NETFramework,Version=v4.6.2": [
-      "Canducci.Pagination >= 2.1.0",
+      "Canducci.Pagination >= 2.1.1",
       "Microsoft.AspNetCore.Mvc.ViewFeatures >= 2.2.0",
       "Microsoft.AspNetCore.Razor >= 2.2.0"
     ],
     ".NETFramework,Version=v4.7": [
-      "Canducci.Pagination >= 2.1.0",
+      "Canducci.Pagination >= 2.1.1",
       "Microsoft.AspNetCore.Mvc.ViewFeatures >= 2.2.0",
       "Microsoft.AspNetCore.Razor >= 2.2.0"
     ],
     ".NETFramework,Version=v4.8": [
-      "Canducci.Pagination >= 2.1.0",
+      "Canducci.Pagination >= 2.1.1",
       "Microsoft.AspNetCore.Mvc.ViewFeatures >= 2.2.0",
       "Microsoft.AspNetCore.Razor >= 2.2.0"
     ],
     ".NETStandard,Version=v2.0": [
-      "Canducci.Pagination >= 2.1.0",
+      "Canducci.Pagination >= 2.1.1",
       "Microsoft.AspNetCore.Mvc.ViewFeatures >= 2.2.0",
       "Microsoft.AspNetCore.Razor >= 2.2.0",
       "NETStandard.Library >= 2.0.3"
     ],
     ".NETStandard,Version=v2.1": [
-      "Canducci.Pagination >= 2.1.0",
+      "Canducci.Pagination >= 2.1.1",
       "Microsoft.AspNetCore.Mvc.ViewFeatures >= 2.2.0",
       "Microsoft.AspNetCore.Razor >= 2.2.0"
     ]
@@ -22056,7 +22056,7 @@
     "C:\\Users\\Developer\\.nuget\\packages\\": {}
   },
   "project": {
-    "version": "2.1.0",
+    "version": "2.1.1",
     "restore": {
       "projectUniqueName": "C:\\Users\\Developer\\Downloads\\Temp\\Pager\\Canducci.Paginated\\Canducci.Pagination.Mvc\\Canducci.Pagination.Mvc.csproj",
       "projectName": "Canducci.Pagination.Mvc",

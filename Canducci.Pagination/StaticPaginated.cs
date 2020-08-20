@@ -2,8 +2,11 @@
 using Canducci.Pagination.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+
 namespace Canducci.Pagination
 {
+
     public sealed class StaticPaginated<T> : PaginatedBase<T>, IStaticPaginated<T>
     {        
         public StaticPaginated(IEnumerable<T> subSet, int pageNumber, int pageSize, int totalItemCount)
@@ -27,9 +30,6 @@ namespace Canducci.Pagination
             LastItemOnPage = numberOfLastItemOnPage > TotalItemCount ? TotalItemCount : numberOfLastItemOnPage;
             SetPages();
         }
-
-        //public static StaticPaginated<T> Create(IEnumerable<T> subSet, int pageNumber, int pageSize, int totalItemCount) 
-        //    => new StaticPaginated<T>(subSet, pageNumber, pageSize, totalItemCount);
 
         public void Dispose()
         {

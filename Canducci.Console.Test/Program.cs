@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Canducci.Pagination;
 using Canducci.Pagination.Interfaces;
+using Canducci.Pagination.MetaData;
 using Microsoft.EntityFrameworkCore;
 
 namespace Canducci.Console.Test

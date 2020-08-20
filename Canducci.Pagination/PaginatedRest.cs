@@ -1,40 +1,12 @@
-﻿using Canducci.Pagination.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Canducci.Pagination.Bases;
+using Canducci.Pagination.Interfaces;
 
 namespace Canducci.Pagination
 {
-    public sealed class PaginatedRest<T> : IPaginatedRest
+    public sealed class PaginatedRest<T> : PaginatedRestBase<T>
     {
-        internal PaginatedRest(Paginated<T> source)
-        {
-            PageCount = source.PageCount;
-            TotalItemCount = source.TotalItemCount;
-            PageNumber = source.PageNumber;
-            PageSize = source.PageSize;
-            HasPreviousPage = source.HasPreviousPage;
-            HasNextPage = source.HasNextPage;
-            IsFirstPage = source.IsFirstPage;
-            IsLastPage = source.IsLastPage;
-            FirstItemOnPage = source.FirstItemOnPage;
-            LastItemOnPage = source.LastItemOnPage;
-            Items = source.AsEnumerable();
-        }
-        public int PageCount { get; }
-        public int TotalItemCount { get; }
-        public int PageNumber { get; }
-        public int PageSize { get; }
-        public bool HasPreviousPage { get; }
-        public bool HasNextPage { get; }
-        public bool IsFirstPage { get; }
-        public bool IsLastPage { get; }
-        public int FirstItemOnPage { get; }
-        public int LastItemOnPage { get; }
-        public IEnumerable<T> Items { get; }
-        public void Dispose()
-        {
-            GC.SuppressFinalize(this);
-        }
+        internal PaginatedRest(IPaginated<T> source)
+            : base(source)
+        { }
     }
 }

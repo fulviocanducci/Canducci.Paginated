@@ -10,7 +10,7 @@
     <div>@item.Id - @item.Name</div>
 }
 <div>
-    @Html.Pagination(Model, page => Url.Action("Materialize", new { page = page }), PaginatedStyle.NumbersWithFirstPreviousNextLast, new PaginatedOptions { CssClassLi= "waves-effect", CssClassAnchor ="" })
+    @Html.Pagination(Model, current => Url.Action("Materialize", new { current }), PaginatedStyle.NumbersWithFirstPreviousNextLast, new PaginatedOptions { CssClassLi= "waves-effect", CssClassAnchor ="" })
 </div>
 <div>
     <pagination pagination-asp-action="Materialize"

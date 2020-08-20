@@ -1,4 +1,5 @@
 ﻿using Canducci.Pagination.Interfaces;
+using Canducci.Pagination.MetaData;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace Canducci.Pagination
         {
             return new Paginated<T>(subSet, pageNumber, pageSize);
         }
-        
+
         public static PaginatedRest<T> ToPaginatedRest<T>(this IQueryable<T> subSet, int pageNumber, int pageSize)
         {
             return new PaginatedRest<T>(ToPaginated<T>(subSet, pageNumber, pageSize));

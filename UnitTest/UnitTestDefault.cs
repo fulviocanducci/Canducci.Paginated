@@ -1,6 +1,7 @@
 using Canducci.Pagination;
 using Canducci.Pagination.Bases;
 using Canducci.Pagination.Interfaces;
+using Canducci.Pagination.MetaData;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections;
 using System.Collections.Generic;

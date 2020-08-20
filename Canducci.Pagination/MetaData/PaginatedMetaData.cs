@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Canducci.Pagination
+namespace Canducci.Pagination.MetaData
 {
     public struct PaginatedMetaData
     {
