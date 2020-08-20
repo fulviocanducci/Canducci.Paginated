@@ -8,13 +8,14 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>    
     <PackageTags>Paginated</PackageTags>    
     <Description>Note: based on repository https://github.com/TroyGoode/PagedList</Description>    
-    <PackageReleaseNotes>Change Version &amp;&amp; Compatibily Version</PackageReleaseNotes>    
+    <PackageReleaseNotes>Change Version
+Add Rest Data Page Metadata</PackageReleaseNotes>    
     <PackageIconUrl></PackageIconUrl>    
-    <Version>2.0.0.0</Version>    
+    <Version>2.1.0.0</Version>    
     <Authors>Canducci</Authors>    
     <Product>Canducci</Product>    
-    <AssemblyVersion>2.0.0.0</AssemblyVersion>    
-    <FileVersion>2.0.0.0</FileVersion>    
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>    
+    <FileVersion>2.1.0.0</FileVersion>    
     <PackageLicenseExpression>MIT</PackageLicenseExpression>    
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>    
     <PackageIcon>ico.png</PackageIcon>    

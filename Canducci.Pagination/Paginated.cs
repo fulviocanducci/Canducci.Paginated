@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq; 
 namespace Canducci.Pagination
 {
-    public class Paginated<T> : PaginatedBase<T>, IPaginated<T>
+    public sealed class Paginated<T> : PaginatedBase<T>, IPaginated<T>
     {
         public Paginated(IQueryable<T> superSet, int pageNumber, int pageSize)
         {
