@@ -1417,9 +1417,9 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
-      "Canducci.Pagination/2.1.1": {
+      "Canducci.Pagination/2.1.2": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
+        "framework": ".NETStandard,Version=v2.1",
         "compile": {
           "bin/placeholder/Canducci.Pagination.dll": {}
         },
@@ -5003,7 +5003,7 @@
         "system.xml.xdocument.nuspec"
       ]
     },
-    "Canducci.Pagination/2.1.1": {
+    "Canducci.Pagination/2.1.2": {
       "type": "project",
       "path": "../Canducci.Pagination/Canducci.Pagination.csproj",
       "msbuildProject": "../Canducci.Pagination/Canducci.Pagination.csproj"
@@ -5011,7 +5011,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "Canducci.Pagination >= 2.1.1",
+      "Canducci.Pagination >= 2.1.2",
       "Microsoft.EntityFrameworkCore.Sqlite >= 2.0.2"
     ]
   },
@@ -5021,11 +5021,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Developer\\Downloads\\Temp\\Pager\\Canducci.Paginated\\Canducci.Console.Test\\Canducci.Console.Test.csproj",
+      "projectUniqueName": "C:\\Users\\Developer\\Downloads\\temp\\canducci-paginated\\Canducci.Paginated\\Canducci.Console.Test\\Canducci.Console.Test.csproj",
       "projectName": "Canducci.Console.Test",
-      "projectPath": "C:\\Users\\Developer\\Downloads\\Temp\\Pager\\Canducci.Paginated\\Canducci.Console.Test\\Canducci.Console.Test.csproj",
+      "projectPath": "C:\\Users\\Developer\\Downloads\\temp\\canducci-paginated\\Canducci.Paginated\\Canducci.Console.Test\\Canducci.Console.Test.csproj",
       "packagesPath": "C:\\Users\\Developer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Developer\\Downloads\\Temp\\Pager\\Canducci.Paginated\\Canducci.Console.Test\\obj\\",
+      "outputPath": "C:\\Users\\Developer\\Downloads\\temp\\canducci-paginated\\Canducci.Paginated\\Canducci.Console.Test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Developer\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5036,14 +5036,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet5/nuget/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Developer\\Downloads\\Temp\\Pager\\Canducci.Paginated\\Canducci.Pagination\\Canducci.Pagination.csproj": {
-              "projectPath": "C:\\Users\\Developer\\Downloads\\Temp\\Pager\\Canducci.Paginated\\Canducci.Pagination\\Canducci.Pagination.csproj"
+            "C:\\Users\\Developer\\Downloads\\temp\\canducci-paginated\\Canducci.Paginated\\Canducci.Pagination\\Canducci.Pagination.csproj": {
+              "projectPath": "C:\\Users\\Developer\\Downloads\\temp\\canducci-paginated\\Canducci.Paginated\\Canducci.Pagination\\Canducci.Pagination.csproj"
             }
           }
         }
@@ -5056,6 +5056,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Sqlite": {
             "target": "Package",
@@ -5077,7 +5078,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
