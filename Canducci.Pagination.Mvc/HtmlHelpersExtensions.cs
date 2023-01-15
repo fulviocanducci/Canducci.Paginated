@@ -71,25 +71,25 @@ namespace Canducci.Pagination.Mvc
       internal static HtmlContentBuilder First<T>(HtmlContentBuilder content, IPaginated<T> paginated, Func<int, string> generatePageUrl, PaginatedOptions options)
       {
          TagBuilder tag = TagLink(paginated.IsFirstPage ? "#" : generatePageUrl(1), options.FirstLabel, options.CssClassAnchor);
-         content.AppendHtml(tag, paginated.IsFirstPage ? options.CssClassLiDisabled : null);
+         content.AppendHtml(tag, paginated.IsFirstPage ? options.CssClassLiDisabled + " " + options.CssClassLi : options.CssClassLi);
          return content;
       }
       internal static HtmlContentBuilder Previous<T>(HtmlContentBuilder content, IPaginated<T> paginated, Func<int, string> generatePageUrl, PaginatedOptions options)
       {
          TagBuilder tag = TagLink(paginated.IsFirstPage ? "#" : generatePageUrl(paginated.PageNumber - 1), options.PreviousLabel, options.CssClassAnchor);
-         content.AppendHtml(tag, paginated.IsFirstPage ? options.CssClassLiDisabled : null);
+         content.AppendHtml(tag, paginated.IsFirstPage ? options.CssClassLiDisabled + " " + options.CssClassLi : options.CssClassLi);
          return content;
       }
       internal static HtmlContentBuilder Next<T>(HtmlContentBuilder content, IPaginated<T> paginated, Func<int, string> generatePageUrl, PaginatedOptions options)
       {
          TagBuilder tag = TagLink(paginated.IsLastPage ? "#" : generatePageUrl(paginated.PageNumber + 1), options.NextLabel, options.CssClassAnchor);
-         content.AppendHtml(tag, paginated.IsLastPage ? options.CssClassLiDisabled : null);
+         content.AppendHtml(tag, paginated.IsLastPage ? options.CssClassLiDisabled + " " + options.CssClassLi : options.CssClassLi);
          return content;
       }
       internal static HtmlContentBuilder Last<T>(HtmlContentBuilder content, IPaginated<T> paginated, Func<int, string> generatePageUrl, PaginatedOptions options)
       {
          TagBuilder tag = TagLink(paginated.IsLastPage ? "#" : generatePageUrl(paginated.PageCount), options.LastLabel, options.CssClassAnchor);
-         content.AppendHtml(tag, paginated.IsLastPage ? options.CssClassLiDisabled : null);
+         content.AppendHtml(tag, paginated.IsLastPage ? options.CssClassLiDisabled + " " + options.CssClassLi : options.CssClassLi);
          return content;
       }
       #endregion

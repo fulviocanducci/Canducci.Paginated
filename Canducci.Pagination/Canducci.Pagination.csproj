@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>    
-    <TargetFrameworks>net451;net461;netstandard1.6;netstandard2.0;netstandard2.1;</TargetFrameworks>    
+    <TargetFrameworks>net461;netstandard1.6;netstandard2.0;netstandard2.1;</TargetFrameworks>    
     <PackageProjectUrl>https://github.com/fulviocanducci/Canducci.Paginated</PackageProjectUrl>    
     <RepositoryUrl>https://github.com/fulviocanducci/Canducci.Paginated</RepositoryUrl>    
     <RepositoryType>https://github.com/fulviocanducci/Canducci.Paginated</RepositoryType>    
