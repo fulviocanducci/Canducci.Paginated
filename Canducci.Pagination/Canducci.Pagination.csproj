@@ -10,11 +10,11 @@
     <Description>Note: based on repository https://github.com/TroyGoode/PagedList</Description>    
     <PackageReleaseNotes></PackageReleaseNotes>    
     <PackageIconUrl></PackageIconUrl>    
-    <Version>2.1.2.0</Version>    
+    <Version>3.0.0.0</Version>    
     <Authors>Canducci</Authors>    
     <Product>Canducci</Product>    
-    <AssemblyVersion>2.1.2.0</AssemblyVersion>    
-    <FileVersion>2.1.2.0</FileVersion>    
+    <AssemblyVersion>3.0.0.0</AssemblyVersion>    
+    <FileVersion>3.0.0.0</FileVersion>    
     <PackageLicenseExpression>MIT</PackageLicenseExpression>    
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>    
     <PackageIcon>ico.png</PackageIcon>    
