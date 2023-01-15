@@ -259,3 +259,6 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/Canducci.Pagination.Mvc/obj/Canducci.Pagination.Mvc.csproj.nuget.g.props
+/Canducci.Pagination.Mvc/obj/Canducci.Pagination.Mvc.csproj.nuget.g.targets
+/Canducci.Pagination.Mvc/obj/project.assets.json
