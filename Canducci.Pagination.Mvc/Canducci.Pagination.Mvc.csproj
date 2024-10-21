@@ -1,50 +1,56 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  
-  <PropertyGroup>
-    <TargetFrameworks>net461;netstandard2.0;netstandard2.1;</TargetFrameworks>
-    <Version>3.0.0.0</Version>
-    <Authors>Canducci</Authors>
-    <Company>Canducci</Company>
-    <PackageProjectUrl>https://github.com/fulviocanducci/Canducci.Paginated</PackageProjectUrl>
-    <PackageIconUrl></PackageIconUrl>
-    <RepositoryUrl>https://github.com/fulviocanducci/Canducci.Paginated</RepositoryUrl>
-    <RepositoryType>https://github.com/fulviocanducci/Canducci.Paginated</RepositoryType>
-    <PackageTags>Paginated Mvc Core</PackageTags>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <AssemblyVersion>3.0.0.0</AssemblyVersion>
-    <FileVersion>3.0.0.0</FileVersion>
-    <PackageReleaseNotes></PackageReleaseNotes>
-    <Description>Pagination Razor Pages and Traditional Mvc</Description>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageIcon>ico.png</PackageIcon>
-    <Copyright>Canducci</Copyright>
-  </PropertyGroup> 
 
-  <ItemGroup>
-    <None Include="..\images\ico.png">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
+   <PropertyGroup>
+      <TargetFrameworks>net461;netstandard2.0;netstandard2.1;net5.0;net6.0;net7.0;net8.0</TargetFrameworks>
+      <Version>3.1.0.0</Version>
+      <Authors>Canducci</Authors>
+      <Company>Canducci</Company>
+      <PackageProjectUrl>https://github.com/fulviocanducci/Canducci.Paginated</PackageProjectUrl>
+      <PackageIconUrl></PackageIconUrl>
+      <RepositoryUrl>https://github.com/fulviocanducci/Canducci.Paginated</RepositoryUrl>
+      <RepositoryType>https://github.com/fulviocanducci/Canducci.Paginated</RepositoryType>
+      <PackageTags>Paginated Mvc Core</PackageTags>
+      <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+      <AssemblyVersion>3.1.0.0</AssemblyVersion>
+      <FileVersion>3.1.0.0</FileVersion>
+      <PackageReleaseNotes></PackageReleaseNotes>
+      <Description>Pagination Razor Pages and Traditional Mvc</Description>
+      <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+      <PackageLicenseExpression>MIT</PackageLicenseExpression>
+      <PackageIcon>ico.png</PackageIcon>
+      <Copyright>Canducci</Copyright>
+      <CheckEolTargetFramework>false</CheckEolTargetFramework>
+   </PropertyGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Razor" Version="2.2.0" />
-  </ItemGroup>
-  
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Razor" Version="2.2.0" />
-  </ItemGroup>
+   <ItemGroup>
+      <None Include="..\images\ico.png">
+         <Pack>True</Pack>
+         <PackagePath></PackagePath>
+      </None>
+   </ItemGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.1' ">
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Razor" Version="2.2.0" />
-  </ItemGroup>
+   <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Razor" Version="2.2.0" />
+   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Canducci.Pagination\Canducci.Pagination.csproj" />
-  </ItemGroup>
+   <!--<ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Razor" Version="2.2.0" />
+   </ItemGroup>
+
+   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Razor" Version="2.2.0" />
+   </ItemGroup>
+
+   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.1' ">
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Razor" Version="2.2.0" />
+   </ItemGroup>-->
+
+   <ItemGroup>
+      <ProjectReference Include="..\Canducci.Pagination\Canducci.Pagination.csproj" />
+   </ItemGroup>
 
 </Project>
