@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
    <PropertyGroup>
-      <TargetFrameworks>net461;netstandard1.6;netstandard2.0;netstandard2.1;net5.0;net6.0;net7.0;net8.0</TargetFrameworks>
+      <TargetFrameworks>netstandard2.0;net6.0;net8.0;net9.0</TargetFrameworks>
       <PackageProjectUrl>https://github.com/fulviocanducci/Canducci.Paginated</PackageProjectUrl>
       <RepositoryUrl>https://github.com/fulviocanducci/Canducci.Paginated</RepositoryUrl>
       <RepositoryType>https://github.com/fulviocanducci/Canducci.Paginated</RepositoryType>
@@ -10,17 +10,22 @@
       <Description>Note: based on repository https://github.com/TroyGoode/PagedList</Description>
       <PackageReleaseNotes></PackageReleaseNotes>
       <PackageIconUrl></PackageIconUrl>
-      <Version>3.1.0.0</Version>
+      <Version>3.2.0.0</Version>
       <Authors>Canducci</Authors>
       <Product>Canducci</Product>
-      <AssemblyVersion>3.1.0.0</AssemblyVersion>
-      <FileVersion>3.1.0.0</FileVersion>
+      <AssemblyVersion>3.2.0.0</AssemblyVersion>
+      <FileVersion>3.2.0.0</FileVersion>
       <PackageLicenseExpression>MIT</PackageLicenseExpression>
       <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
       <PackageIcon>ico.png</PackageIcon>
       <Copyright>Canducci</Copyright>
       <CheckEolTargetFramework>false</CheckEolTargetFramework>
+      <PackageReadmeFile>README.md</PackageReadmeFile>
    </PropertyGroup>
+
+   <ItemGroup>
+      <None Include="..\README.md" Pack="true" PackagePath="\" />
+   </ItemGroup>
 
    <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.6' ">
       <PackageReference Include="System.Linq.Queryable" Version="4.3.0" />
