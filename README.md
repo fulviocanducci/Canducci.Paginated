@@ -14,7 +14,6 @@
 
 #### Build Test
 
-[![Build Status](https://travis-ci.org/fulviocanducci/Canducci.Paginated.svg?branch=master)](https://travis-ci.org/fulviocanducci/Canducci.Paginated)
 ![Github Workflows](https://github.com/fulviocanducci/Canducci.Paginated/workflows/.NET%20Core/badge.svg)
 
 ## Installation
