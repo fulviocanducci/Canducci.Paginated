@@ -1,0 +1,14 @@
+﻿Restoring packages for C:\Temp\Canducci.Paginated\UnitTest\UnitTest.csproj...
+  CACHE https://api.nuget.org/v3/vulnerabilities/index.json
+  CACHE https://api.nuget.org/v3-vulnerabilities/2025.12.10.23.26.49/vulnerability.base.json
+  CACHE https://api.nuget.org/v3-vulnerabilities/2025.12.10.23.26.49/2025.12.14.11.27.03/vulnerability.update.json
+Installing NuGet package SQLitePCLRaw.core 3.0.2.
+Writing assets file to disk. Path: C:\Temp\Canducci.Paginated\UnitTest\obj\project.assets.json
+Executing nuget actions took 60 ms
+Time Elapsed: 00:00:00.1871987
+========== Finished ==========
+
+Time Elapsed: 00:00:00.0080147
+========== Finished ==========
+
+
