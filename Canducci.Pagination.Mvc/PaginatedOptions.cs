@@ -13,6 +13,8 @@
         public string NextLabel { get; set; } = "»";
         public string LastLabel { get; set; } = "»»";
 
+        public bool TotalPages { get; set; } = false;
+        public string TotalPagesLabel { get; set; } ="Page";
         public int MaximumPageNumbersToDisplay { get; set; } = 8;
 
     }

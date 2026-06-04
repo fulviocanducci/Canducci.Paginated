@@ -1,61 +1,52 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-   <PropertyGroup>
-      <TargetFrameworks>netstandard2.0;net6.0;net8.0;net9.0</TargetFrameworks>
-      <Version>3.2.0.0</Version>
-      <Authors>Canducci</Authors>
-      <Company>Canducci</Company>
-      <PackageProjectUrl>https://github.com/fulviocanducci/Canducci.Paginated</PackageProjectUrl>
-      <PackageIconUrl></PackageIconUrl>
-      <RepositoryUrl>https://github.com/fulviocanducci/Canducci.Paginated</RepositoryUrl>
-      <RepositoryType>https://github.com/fulviocanducci/Canducci.Paginated</RepositoryType>
-      <PackageTags>Paginated Mvc Core</PackageTags>
-      <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-      <AssemblyVersion>3.2.0.0</AssemblyVersion>
-      <FileVersion>3.2.0.0</FileVersion>
-      <PackageReleaseNotes></PackageReleaseNotes>
-      <Description>Pagination Razor Pages and Traditional Mvc</Description>
-      <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-      <PackageLicenseExpression>MIT</PackageLicenseExpression>
-      <PackageIcon>ico.png</PackageIcon>
-      <Copyright>Canducci</Copyright>
-      <CheckEolTargetFramework>false</CheckEolTargetFramework>
-      <PackageReadmeFile>README.md</PackageReadmeFile>
-   </PropertyGroup>
-   
-   <ItemGroup>
-      <None Include="..\README.md" Pack="true" PackagePath="\" />
-   </ItemGroup>
-   
-   <ItemGroup>
-      <None Include="..\images\ico.png">
-         <Pack>True</Pack>
-         <PackagePath></PackagePath>
-      </None>
-   </ItemGroup>
+	<PropertyGroup>
+		<TargetFrameworks>net5.0;net6.0;net8.0;net9.0;net10.0</TargetFrameworks>
 
-   <ItemGroup>
-      <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
-      <PackageReference Include="Microsoft.AspNetCore.Razor" Version="2.2.0" />
-   </ItemGroup>
+		<Version>3.3.0.0</Version>
+		<AssemblyVersion>3.3.0.0</AssemblyVersion>
+		<FileVersion>3.3.0.0</FileVersion>
 
-   <!--<ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
-      <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
-      <PackageReference Include="Microsoft.AspNetCore.Razor" Version="2.2.0" />
-   </ItemGroup>
+		<Authors>Canducci</Authors>
+		<Company>Canducci</Company>
 
-   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
-      <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
-      <PackageReference Include="Microsoft.AspNetCore.Razor" Version="2.2.0" />
-   </ItemGroup>
+		<PackageProjectUrl>https://github.com/fulviocanducci/Canducci.Paginated</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/fulviocanducci/Canducci.Paginated</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
 
-   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.1' ">
-      <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
-      <PackageReference Include="Microsoft.AspNetCore.Razor" Version="2.2.0" />
-   </ItemGroup>-->
+		<PackageTags>Paginated Mvc Core</PackageTags>
 
-   <ItemGroup>
-      <ProjectReference Include="..\Canducci.Pagination\Canducci.Pagination.csproj" />
-   </ItemGroup>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+
+		<Description>Pagination Razor Pages and Traditional MVC</Description>
+
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+
+		<PackageIcon>ico.png</PackageIcon>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+
+		<Copyright>Canducci</Copyright>
+		<CheckEolTargetFramework>false</CheckEolTargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Canducci.Pagination\Canducci.Pagination.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\README.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\images\ico.png">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+	</ItemGroup>
 
 </Project>

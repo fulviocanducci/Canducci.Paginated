@@ -7,7 +7,7 @@
     };
 
 }
-
+<div>oi</div>
 <br /><br /><br />
 
 @foreach (var item in Model)
@@ -17,7 +17,7 @@
 
 <h3>Mode Default</h3>
 <div>
-    @Html.Pagination(Model, current => Url.Action("Index", new { current }))
+    @Html.Pagination(Model, current => Url.Action("Index", new { current }), PaginatedStyle.FirstPreviousNextLast, new PaginatedOptions { TotalPages=false, TotalPagesLabel="Páginas" })
 </div>
 <hr />
 <h3>Mode PreviousNext</h3>
@@ -26,7 +26,7 @@
     PaginatedStyle.PreviousNext,
     new PaginatedOptions {
         NextLabel = "Próximo",
-        PreviousLabel = "Anterior"})
+        PreviousLabel = "Anterior", TotalPages=true, TotalPagesLabel="Páginas"})
 </div>
 <hr />
 <h3>Mode FirstPreviousNextLast</h3>
@@ -37,12 +37,12 @@
         NextLabel = "Próximo",
         PreviousLabel = "Anterior",
         FirstLabel = "Primeiro",
-        LastLabel = "Último" })
+        LastLabel = "Último", TotalPages=true, TotalPagesLabel="Páginas" })
 </div>
 <hr />
 <h3>Mode Numbers</h3>
 <div>
-    @Html.Pagination(Model, current => Url.Action("Index", new { current }), PaginatedStyle.Numbers)
+    @Html.Pagination(Model, current => Url.Action("Index", new { current }), PaginatedStyle.Numbers, new PaginatedOptions { TotalPages=true, TotalPagesLabel="Páginas" })
 </div>
 <hr />
 <h3>Mode NumbersWithPreviousNext</h3>
@@ -53,7 +53,7 @@
         NextLabel = "Próximo",
         PreviousLabel = "Anterior",
         FirstLabel = "Primeiro",
-        LastLabel = "Último" })
+        LastLabel = "Último", TotalPages=true, TotalPagesLabel="Páginas" })
 </div>
 <hr />
 <h3>Mode NumbersWithFirstPreviousNextLast</h3>
@@ -65,7 +65,7 @@
         PreviousLabel = "Anterior",
         FirstLabel = "Primeiro",
         LastLabel = "Último",
-        MaximumPageNumbersToDisplay = 4 })
+        MaximumPageNumbersToDisplay = 4, TotalPages=true, TotalPagesLabel="Páginas" })
 </div>
 
 
@@ -143,7 +143,10 @@
                 pagination-css-class-anchor="page-link"
                 pagination-css-class-li="page-item"
                 pagination-maximum-page-number-display="4"
-                pagination-css-class-li-disabled="disabled">
+                pagination-css-class-li-disabled="disabled"
+                pagination-total-pages="true"
+                pagination-label-total-pages="Página(s)"                
+                >
     </pagination>
 </div>
 
