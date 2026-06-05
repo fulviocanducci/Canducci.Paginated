@@ -1,4 +1,4 @@
-﻿@page "page-{current=1}"
+﻿@page "/peoples"
 @model PeoplesModel
 <br />
 <table class="table table-striped">
@@ -11,17 +11,16 @@
     <tbody>
         @foreach (var item in Model.Items)
         {
-        <tr>
-            <td>@item.Id</td>
-            <td>@item.Name</td>
-        </tr>
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+            </tr>
         }
     </tbody>
     <tfoot>
         <tr>
             <td colspan="2" class="text-center">
                 <pagination pagination-asp-page="Peoples"
-                            pagination-asp-page-handler="page-{current=1}"
                             pagination-style="NumbersWithFirstPreviousNextLast"
                             pagination-css-class-li-active="active"
                             pagination-css-class-ul="pagination pagination-sm"
@@ -36,12 +35,11 @@
                             pagination-total-pages="true"
                             pagination-label-total-pages="página(s).">
                 </pagination>
-            </td>            
+            </td>
         </tr>
         <tr>
             <td colspan="2" class="text-center">
                 <pagination pagination-asp-page="Peoples"
-                            pagination-asp-page-handler="page-{current=1}"
                             pagination-css-class-li-active="active"
                             pagination-css-class-ul="pagination"
                             pagination-paginated="Model.Items"
@@ -56,12 +54,15 @@
                 @Html.Pagination(Model.Items,
                     current => Url.Page("Peoples", new { current }),
                     PaginatedStyle.NumbersWithFirstPreviousNextLast,
-                    new PaginatedOptions {
+                    new PaginatedOptions
+                    {
                         NextLabel = "Próximo",
                         PreviousLabel = "Anterior",
                         FirstLabel = "Primeiro",
-                        LastLabel = "Último"
-                    })                
+                        LastLabel = "Último",
+                        TotalPages = true,
+                        TotalPagesLabel = "página(s)."
+                    })
             </td>
         </tr>
         <tr>

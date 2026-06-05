@@ -5,13 +5,9 @@ using WebRazor.Models;
 
 namespace WebRazor.Pages
 {
-    public class PeoplesModel : PageModel
+    public class PeoplesModel(DatabaseContext context) : PageModel
     {
-        private readonly DatabaseContext Context;
-        public PeoplesModel(DatabaseContext context)
-        {
-            Context = context;            
-        }
+        private readonly DatabaseContext Context = context;
 
         public Paginated<People> Items { get; private set; }
         
@@ -19,7 +15,7 @@ namespace WebRazor.Pages
         {            
             Items = Context.People
                 .OrderBy(x => x.Name)
-                .OrderBy(x => x.Id)
+                    .ThenBy(x => x.Id)
                 .ToPaginated(current ?? 1, 2);
         }
     }
