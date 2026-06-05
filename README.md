@@ -12,10 +12,6 @@
 [![Version](https://img.shields.io/nuget/v/Canducci.Pagination.Mvc.svg?style=plastic&label=version)](https://www.nuget.org/packages/Canducci.Pagination.Mvc/)
 [![NuGet](https://img.shields.io/nuget/dt/Canducci.Pagination.Mvc.svg)](https://www.nuget.org/packages/Canducci.Pagination.Mvc/)
 
-#### Build Test
-
-![Github Workflows](https://github.com/fulviocanducci/Canducci.Paginated/workflows/.NET%20Core/badge.svg)
-
 ## Installation
 
 - ***Canducci.Pagination***
@@ -370,15 +366,17 @@ namespace Canducci.WebAppRazorPages.Test.Pages
                             pagination-asp-page-handler="page-{current=1}"
                             pagination-style="NumbersWithFirstPreviousNextLast"
                             pagination-css-class-li-active="active"
-                            pagination-css-class-ul="pagination"
+                            pagination-css-class-ul="pagination pagination-sm"
                             pagination-paginated="Model.Items"
-                            pagination-label-next="Next"
-                            pagination-label-previous="Previous"
-                            pagination-label-first="First"
-                            pagination-label-last="Last"
+                            pagination-label-next="Próximo"
+                            pagination-label-previous="Anterior"
+                            pagination-label-first="Primeiro"
+                            pagination-label-last="Último"
                             pagination-css-class-anchor="page-link"
                             pagination-css-class-li="page-item"
-                            pagination-css-class-li-disabled="disabled">
+                            pagination-css-class-li-disabled="disabled"
+                            pagination-total-pages="true"
+                            pagination-label-total-pages="página(s).">
                 </pagination>
             </td>            
         </tr>

@@ -24,7 +24,7 @@
                             pagination-asp-page-handler="page-{current=1}"
                             pagination-style="NumbersWithFirstPreviousNextLast"
                             pagination-css-class-li-active="active"
-                            pagination-css-class-ul="pagination"
+                            pagination-css-class-ul="pagination pagination-sm"
                             pagination-paginated="Model.Items"
                             pagination-label-next="Próximo"
                             pagination-label-previous="Anterior"
@@ -32,7 +32,9 @@
                             pagination-label-last="Último"
                             pagination-css-class-anchor="page-link"
                             pagination-css-class-li="page-item"
-                            pagination-css-class-li-disabled="disabled">
+                            pagination-css-class-li-disabled="disabled"
+                            pagination-total-pages="true"
+                            pagination-label-total-pages="página(s).">
                 </pagination>
             </td>            
         </tr>
